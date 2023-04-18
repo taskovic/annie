@@ -10,9 +10,10 @@ import React, {
 } from "react";
 import { Context } from "../contexts";
 import { navbarTabs } from "../configs";
+import ReferNewPatient from "../components/hoc/ReferNewPatient";
 
 export default function Dashboard() {
-  const [activeTabName, setActiveTabName] = useState(navbarTabs[0]);
+  const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
 
   useEffect(() => {
     // Do something on component init
@@ -31,7 +32,7 @@ export default function Dashboard() {
       case navbarTabs[1]:
         return () => <h1>View 2</h1> // Change this with proper component which will be called
       case navbarTabs[2]:
-        return () => <h1>View 3</h1> // Change this with proper component which will be called
+        return () => <ReferNewPatient />
       case navbarTabs[3]:
         return () => <h1>View 4</h1> // Change this with proper component which will be called
       default: 
