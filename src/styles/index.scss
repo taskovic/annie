@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.app {
+  margin: auto auto;
+  aspect-ratio: 16 / 9;
+  max-width: 2000px;
+  height: max-content;
+  max-height: 1200px;
+}
+
+// This is reset style which is obligated to reset all default behaviors of all elements who will be used in future development.
+@import "./reset.scss";
+
+/* Field styles */
+@import "./components/index.scss";

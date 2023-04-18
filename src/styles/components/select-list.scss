@@ -1,0 +1,53 @@
+.annie-select-list {
+  @apply relative;
+  max-width: 290px;
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid #E1E5EB;
+  margin-top: 200px;
+  margin-left: 200px;
+  
+  .select-list-placeholder {
+    width: inherit;
+    height: inherit;
+    @apply flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .annie-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .annie-text {
+      margin-left: -65px;
+      font-weight: 500;
+      font-size: 16px;
+      color: #00283C;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+    }
+  }
+
+  .annie-select-list-options {
+    @apply absolute;
+    width: 100%;
+    height: 300px;
+    background-color: green;
+  }
+
+  .opened-list {
+    transition: all .3s;
+    transform: rotateZ(180deg);
+  }
+  
+  .closed-list {
+    transition: all .3s;
+    transform: rotateZ(0deg);
+  }
+}
+

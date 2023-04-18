@@ -1,0 +1,61 @@
+
+.annie-header {
+  @apply w-full;
+  @apply bg-gray-200;
+  @apply border-b-2 border-gray-700;
+  border-bottom: 2px solid #dadee5;
+  padding: 36px 60px 0px 60px;
+
+  .annie-navbar {
+    @apply flex;
+    @apply items-center;
+    @apply w-full;
+    height: 150px;
+
+    .logo-section {
+      @apply w-full;
+      max-width: 477px;
+      height: 60px;
+    }
+
+    .search-section {
+      @apply relative;
+      @apply w-full;
+      max-width: 1089px;
+      height: 60px; 
+
+      .search-input {
+        @apply w-full;
+        @apply box-border;
+        @apply bg-gray-400;
+        @apply border-2 border-gray-600;
+        @apply rounded-xl;
+        padding-left: 30px;
+        height: inherit;
+
+        &::placeholder {
+          @apply text-independence;
+          @apply opacity-40;
+          @apply not-italic;
+          @apply font-medium;
+          @apply text-base;
+          font-family: 'Carmen Sans';
+        }
+      }
+
+      .annie-icon {
+        @apply absolute;
+        right: 30px;
+        top: 18px;
+      }
+
+    }
+  }
+
+  .annie-nav {
+    @apply w-full;
+    height: 54px;
+    background-color: yellow;
+  }
+
+}

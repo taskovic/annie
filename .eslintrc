@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "react-app"
+    ],
+    "rules": {
+        "arrow-body-style": ["error", "as-needed"], // this is related to writing function which just need to return something in one line
+        // "react/self-closing-comp": ["error", {
+        //     "component": true,
+        //     "html": true
+        // }], // this means that if you have nothing to place between two tags you can use self closing tag like a (<Component /> or <div />)
+    }
+}
