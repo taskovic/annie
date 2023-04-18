@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .app {
   margin: auto auto;
   aspect-ratio: 16 / 9;
   max-width: 2000px;
+  width: 100%;
   height: max-content;
   max-height: 1200px;
 }
@@ -16,3 +16,6 @@
 
 /* Field styles */
 @import "./components/index.scss";
+
+/* Screen style */
+@import "./screens/index.scss";

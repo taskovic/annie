@@ -4,7 +4,6 @@
  * Screen style will be just grid styling, the basic screen style will be done in components
  */
 import Header from "../components/Header"
-import Footer from "../components/Footer"
 import {  
   useState, 
   useEffect 
@@ -33,9 +32,10 @@ export default function Dashboard() {
 
   return(
     <Context.Provider value={ProviderRegistry}>
-      <Header />
-
-      <Footer />
+      <div className="annie-dashboard">
+        <Header />
+        
+      </div>  
     </Context.Provider>
   )
 }
