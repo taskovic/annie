@@ -9,6 +9,7 @@ import {
   useEffect 
 } from "react"
 import { Context } from "../contexts";
+import Filters from "../components/Filters";
 
 
 export default function Dashboard() {
@@ -30,10 +31,15 @@ export default function Dashboard() {
     setActiveTabName
   }
 
+
+
   return(
     <Context.Provider value={ProviderRegistry}>
       <div className="annie-dashboard">
         <Header />
+        <Filters>
+          
+        </Filters>
         
       </div>  
     </Context.Provider>
