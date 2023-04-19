@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { getHospices } from "../../api/dashboard";
 
 export default function ReferNewPatient() {
   const dummyHospice = [
@@ -19,7 +20,13 @@ export default function ReferNewPatient() {
      * Set filtered hospices with response data
      * Set push notification if error occurs
      */
-    console.warn("Hospice API call missing!");
+    getHospices()
+      .then(resp => {
+        console.log(resp)
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }, []);
   
   return <></> // here will be placed filters and flat list components
