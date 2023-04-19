@@ -1,6 +1,4 @@
-import * as React from 'react';
 import { Paper, InputBase, IconButton, InputBaseProps } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 
 interface Props extends InputBaseProps {
   handleSearch?: Function
