@@ -15,14 +15,6 @@ import ReferNewPatient from "../components/hoc/ReferNewPatient";
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
 
-  useEffect(() => {
-    // Do something on component init
-
-    return () => {
-      setActiveTabName(navbarTabs[0]);
-    }
-  }, []);
-
   function getComponent(name: string) {
     if (!name) return <h1>No View</h1> // this can be loader
 

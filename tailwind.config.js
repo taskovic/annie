@@ -13,6 +13,17 @@ export default {
         "gray-600": "#e1e5eB",
         "gray-700": "#dadee5"
       },
+      fontFamily: {
+        CarmenSemiBold: ["Carmen-Semi-Bold", "sans"],
+        CarmenBold: ["Carmen-Bold", "sans"],
+        CarmenExtraBold: ["Carmen-Extra-Bold", "sans"],
+        CarmenHeavy: ["Carmen-Heavy", "sans"],
+        CarmenLight: ["Carmen-Light", "sans"],
+        CarmenMedium: ["Carmen-Medium", "sans"],
+        CarmenRegular: ["Carmen-Regular", "sans"],
+        CarmenThin: ["Carmen-Thin", "sans"],
+        CarmenThin: ["Carmen-Ultra-Light", "sans"]
+      },
       fontSize: {}
     },
   },
