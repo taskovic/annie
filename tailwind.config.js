@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        "green-light": "#cbebeb",
+        "green-dark": "#46c1b5",
         "independence": "#6F644C",
         "gray-200": "#f7f9fd",
         "gray-400": "#e9edf5",

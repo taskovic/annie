@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getHospices } from "../../api/dashboard";
+import HospiceFlatList from "../HospiceFlatList";
 
 export default function ReferNewPatient() {
 
@@ -17,8 +18,9 @@ export default function ReferNewPatient() {
       .catch(err => console.error(err))
   }, [])
 
-  console.log("HOSPICES: ", hospices)
-  console.log("FILTERED_HOSPICES: ", filteredHospices)
-
-  return <>Refer new patient</> // here will be placed filters and flat list components
+  return (
+    <>
+      <HospiceFlatList hospices={filteredHospices} />
+    </>
+  )
 }
