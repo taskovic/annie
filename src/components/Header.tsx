@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Context } from "../contexts/";
 import Logo from "./Logo";
-import { Box, Tab } from "@mui/material"
+import { Box } from "@mui/material"
 import SearchInput from "./SearchInput";
 import NotificationButton from "./NotificationButton";
 import ProfileButton from "./ProfileButton";
 import { navbarTabs } from "../configs";
 import NavBar from "./NavBar";
+import { TContext } from "../types/";
 
 export default function Header() {
-
-  const [value, setValue] = useState(navbarTabs[0]);
   const [notification, setNotification] = useState([{tab: navbarTabs[3],value: 3}]);
 
-  const handleChangeTab = (value: string) =>{
-    setValue(value)
-    setNotification(notification.filter(x => x.tab !== value))
-  }
+  const {
+    activeTabName,
+    setActiveTabName
+  }= useContext(Context) as TContext;
 
   return (
     <Box className="annie-header">
@@ -31,10 +31,10 @@ export default function Header() {
       </Box>
       <Box className="navbar-section">
         <NavBar
-          value={value}
+          value={activeTabName}
           tabs={navbarTabs}
           notifications={notification}
-          handleChange={setValue}
+          handleChange={setActiveTabName}
         />
       </Box>
     </Box>

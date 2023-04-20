@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "dark-blue": "#6699FF",
         "green-light": "#cbebeb",
         "green-dark": "#46c1b5",
         "independence": "#6F644C",
@@ -26,7 +27,9 @@ export default {
         CarmenThin: ["Carmen-Thin", "sans"],
         CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
-      fontSize: {}
+      fontSize: {
+
+      }
     },
   },
   plugins: []
