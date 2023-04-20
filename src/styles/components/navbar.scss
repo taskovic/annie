@@ -37,6 +37,7 @@
             color: rgba(0, 40, 60, .5);
             text-transform: capitalize;
             font-size: 16px;
+            @apply font-CarmenSemiBold;
         }
 
         .MuiTabs-indicator {

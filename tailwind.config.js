@@ -24,7 +24,7 @@ export default {
         CarmenMedium: ["Carmen-Medium", "sans"],
         CarmenRegular: ["Carmen-Regular", "sans"],
         CarmenThin: ["Carmen-Thin", "sans"],
-        CarmenThin: ["Carmen-Ultra-Light", "sans"]
+        CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
       fontSize: {}
     },
