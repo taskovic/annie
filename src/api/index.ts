@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: "https://google.com", // Just check if this URL is working
+  baseURL: import.meta.env.VITE_API_BASE_URL // here needs to be checked if this is production or development
 });
 
 axiosInstance.interceptors.request.use(

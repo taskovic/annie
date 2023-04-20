@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Carmen-Semi-Bold";
+  src: url("../assets/fonts/Carmen_Sans_SemiBold.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Bold";
+  src: url("../assets/fonts/Carmen_Sans_Bold.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Extra-Bold";
+  src: url("../assets/fonts/Carmen_Sans_ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Heavy";
+  src: url("../assets/fonts/Carmen_Sans_Heavy.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Light";
+  src: url("../assets/fonts/Carmen_Sans_Light.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Medium";
+  src: url("../assets/fonts/Carmen_Sans_Medium.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Regular";
+  src: url("../assets/fonts/Carmen_Sans_Regular.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Thin";
+  src: url("../assets/fonts/Carmen_Sans_Thin.otf");
+}
+
+@font-face {
+  font-family: "Carmen-Ultra-Light";
+  src: url("../assets/fonts/Carmen_Sans_UltraLight.otf");
+}
+
 .app {
   margin: auto auto;
   aspect-ratio: 16 / 9;
