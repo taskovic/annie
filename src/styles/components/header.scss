@@ -1,16 +1,50 @@
-
 .annie-header {
   @apply w-full;
   @apply bg-gray-200;
   @apply border-b-2 border-gray-700;
   border-bottom: 2px solid #dadee5;
   padding: 36px 60px 0px 60px;
+  position: relative;
+  max-width: 2000px;
+  width: 100%;
+  height: 204px;
+  left: 0px;
+  top: 0px;
 
-  .annie-navbar {
+  .search-section {
+    position: absolute;
+    left: 26.7%;
+    right: 18.85%;
+    top: 17.16%;
+    bottom: 55.39%;
+    max-width: 1089px;
+    height: 60px;
+  }
+
+  .notification-section {
+    position: absolute;
+    left: 91.55%;
+    right: 7.25%;
+    top: 17.65%;
+    bottom: 70.59%;
+  }
+
+  .profile-section {
+    position: absolute;
+    left: 94.55%;
+    right: 3.05%;
+    top: 11.76%;
+    bottom: 64.71%;
+  }
+
+  .navbar-section {
     @apply flex;
     @apply items-center;
-    @apply w-full;
-    height: 150px;
+    position: absolute;
+    width: 1088px;
+    height: 53px;
+    left: 60px;
+    top: 151px;
 
     .logo-section {
       @apply w-full;
@@ -18,11 +52,13 @@
       height: 60px;
     }
 
-    .search-section {
+
+
+    /*.search-section {
       @apply relative;
       @apply w-full;
       max-width: 1089px;
-      height: 60px; 
+      height: 60px;
 
       .search-input {
         @apply w-full;
@@ -49,7 +85,7 @@
         top: 18px;
       }
 
-    }
+    }*/
   }
 
   .annie-nav {

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PrivateRouter from "./app/router/privateRouter";
-import Dashboard from "./app/screens/dashboard.screen";
+import PrivateRouter from "./router/privateRouter";
+import Dashboard from "./screens/dashboard";
 import "./styles/index.scss";
 
 function App() {

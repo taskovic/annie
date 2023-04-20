@@ -1,0 +1,48 @@
+.annie-navbar {
+    @apply w-full;
+    background-color: transparent;
+
+    .annie-navbar-tabs {
+        .MuiButtonBase-root {
+            flex: 1;
+            height: 53px !important;
+            box-sizing: border-box;
+            padding: 0px 0px 21px 0px !important;
+            min-height: 53px;
+        }
+
+        .MuiTouchRipple-root{
+            display: none;
+        }
+
+        .Mui-selected {
+            color: #6699FF !important;
+        }
+
+        .MuiTab-iconWrapper {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #6699FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            margin-left: 12px;
+            opacity: 1 !important;
+        }
+
+        .MuiTab-textColorPrimary{
+            color: rgba(0, 40, 60, .5);
+            text-transform: capitalize;
+            font-size: 16px;
+            @apply font-CarmenSemiBold;
+        }
+
+        .MuiTabs-indicator {
+            height: 4px;
+            background-color: #6699FF;
+        }
+    }
+}
