@@ -1,7 +1,6 @@
 .annie-refer-checkbox-checked {
   transition: all .3s;
-  max-width: 186px;
-  @apply w-full;
+  width: 186px;
   height: 56px;
   border-radius: 12px !important;
   border: 1px solid #46c1b5 !important;
@@ -41,8 +40,7 @@
 
 .annie-refer-checkbox-unchecked {
   transition: all .3s;
-  max-width: 186px;
-  @apply w-full;
+  width: 186px;
   height: 56px;
   border-radius: 12px !important;
   border: 1px solid transparent !important;
