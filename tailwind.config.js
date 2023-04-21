@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "dark-blue": "#6699FF",
         "green-light": "#cbebeb",
         "green-dark": "#46c1b5",
         "independence": "#6F644C",
@@ -15,7 +16,10 @@ export default {
         "gray-600": "#e1e5eB",
         "gray-700": "#dadee5",
         "malibu": "#6699FF",
-        "daintree": "#00283C"
+        "daintree": "#00283C",
+        "mystic": "#dee4ea",
+        "juniper": "#668993",
+        "tiber": "#8195a1"
       },
       fontFamily: {
         CarmenSemiBold: ["Carmen-Semi-Bold", "sans"],
@@ -32,10 +36,11 @@ export default {
         "sm": ["12px"],
         "md": ["16px"],
         "lg": ["16px"],
+        "20": ["1.25rem"],
       },
       backgroundColor: {
         "link-water": "#F7F9FD",
-        "malibu": "#6699FF"
+        "malibu": "#6699FF",
       },
       borderColor: {
         "athens-gray": "#E1E5EB",
@@ -45,6 +50,7 @@ export default {
         "1": "1px"
       },
     },
+    
   },
   plugins: []
 }

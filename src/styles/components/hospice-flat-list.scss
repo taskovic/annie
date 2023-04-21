@@ -21,6 +21,87 @@
       max-width: 1879px;
       @apply w-full;
       height: 88px;
+
+      .list-item-1 {
+        // background-color: red;
+      }
+
+      .list-item-2 {
+        @apply font-CarmenMedium;
+        @apply text-20;
+        @apply text-center;
+      }
+
+      .list-item-3 {
+        img {
+          width: 32px;
+          height: 32px;
+          margin: auto auto;
+        }
+      }
+
+      .list-item-4 {
+        @apply font-CarmenMedium;
+        @apply text-20;
+        @apply text-center;
+        @apply text-tiber;
+      }
+
+      .list-item-5 {
+        @apply font-CarmenMedium;
+        @apply text-20;
+        @apply text-center;
+        @apply text-tiber;
+      }
+
+      .list-item-6 {
+        @apply flex;
+        @apply items-center;
+        @apply justify-center;
+        height: inherit;
+
+        .annie-rating {
+          width: 139px;
+          @apply font-CarmenMedium;
+          @apply text-20;
+          @apply text-tiber;
+        }
+      }
+
+      .list-item-7 {
+        @apply font-CarmenMedium;
+        @apply text-20;
+        @apply text-center;
+        @apply text-tiber;
+      }
+
+      .list-item-8 {
+        @apply font-CarmenMedium;
+        @apply text-20;
+        @apply text-right;
+        @apply text-tiber;
+      }
+
+      .list-item-9 {
+        @apply text-right;
+
+        .MuiBadge-root {
+          width: 71px;
+          height: 40px;
+          background-color: #d3e1fe;
+          border-radius: 20px;
+
+          .MuiBadge-badge {
+            @apply font-CarmenMedium;
+            @apply text-20;
+            color: #6699ff;
+            top: 18px;
+            right: 34px;
+          }
+        }
+      }
+    
+
     }
   
     .gray-list-item {

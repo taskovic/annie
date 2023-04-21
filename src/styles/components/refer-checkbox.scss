@@ -1,17 +1,80 @@
-.annie-refer-checkbox {
+.annie-refer-checkbox-checked {
+  transition: all .3s;
   max-width: 186px;
   @apply w-full;
   height: 56px;
-  @apply bg-green-light;
-  border-radius: 12px;
-  border: 1px solid #46c1b5;
-  @apply font-CarmenMedium;
+  border-radius: 12px !important;
+  border: 1px solid #46c1b5 !important;
   padding: 15px;
-  
-  p {
-    @apply text-md;
-    color: #00283C;
+  @apply bg-green-light #{!important};
+  @apply relative;
+
+  .annie-checkmark-text {
+    @apply absolute;
+    left: 24px;
+    @apply font-CarmenMedium;
+    @apply text-juniper;
+    font-size: 16px;
+    text-transform: capitalize;
   }
 
-  .annie-checkmark-box {}
-}   
+  .annie-checkmark-box {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply bg-green-dark;
+    @apply absolute;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    margin-right: 0px;
+
+    img {
+      transition: all .3s;
+      @apply opacity-100;
+    }
+  }
+
+}
+
+
+.annie-refer-checkbox-unchecked {
+  transition: all .3s;
+  max-width: 186px;
+  @apply w-full;
+  height: 56px;
+  border-radius: 12px !important;
+  border: 1px solid transparent !important;
+  padding: 15px;
+  @apply bg-mystic #{!important};
+  @apply relative;
+
+  .annie-checkmark-text {
+    @apply absolute;
+    left: 24px;
+    @apply font-CarmenMedium;
+    color: #00283C;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  .annie-checkmark-box {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply bg-white;
+    @apply absolute;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    margin-right: 0px;
+
+    img {
+      transition: all .3s;
+      @apply opacity-0;
+    }
+  }
+
+}
