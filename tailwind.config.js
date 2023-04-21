@@ -14,7 +14,10 @@ export default {
         "gray-200": "#f7f9fd",
         "gray-400": "#e9edf5",
         "gray-600": "#e1e5eB",
-        "gray-700": "#dadee5"
+        "gray-700": "#dadee5",
+        "mystic": "#dee4ea",
+        "juniper": "#668993",
+        "tiber": "#8195a1"
       },
       fontFamily: {
         CarmenSemiBold: ["Carmen-Semi-Bold", "sans"],
@@ -28,7 +31,7 @@ export default {
         CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
       fontSize: {
-
+        20: "1.25rem",
       }
     },
   },

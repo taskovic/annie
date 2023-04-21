@@ -10,12 +10,12 @@ export default function ReferNewPatient() {
 
   useEffect(() => {
     getHospices()
-      .then(hospice => {
-        const { data } = hospice;
-        setHospices(data);
-        setFilteredHospices(data);
-      })
-      .catch(err => console.error(err))
+    .then(hospice => {
+      const { data } = hospice;
+      setHospices(data);
+      setFilteredHospices(data);
+    })
+    .catch(err => console.error(err))
   }, [])
 
   return (
