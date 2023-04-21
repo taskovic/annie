@@ -66,8 +66,6 @@ export default function HospiceFlatList({
               <Badge badgeContent={14} />
             </TableCell>
           </TableRow>
-
-
         </TableBody>
       </Table>
     </TableContainer>
