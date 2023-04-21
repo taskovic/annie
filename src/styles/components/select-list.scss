@@ -24,9 +24,9 @@
     }
 
     .annie-text {
+      @apply text-md;
       margin-left: -65px;
       font-weight: 500;
-      font-size: 16px;
       color: #00283C;
       mix-blend-mode: normal;
       opacity: 0.5;

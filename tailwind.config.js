@@ -13,7 +13,9 @@ export default {
         "gray-200": "#f7f9fd",
         "gray-400": "#e9edf5",
         "gray-600": "#e1e5eB",
-        "gray-700": "#dadee5"
+        "gray-700": "#dadee5",
+        "malibu": "#6699FF",
+        "daintree": "#00283C"
       },
       fontFamily: {
         CarmenSemiBold: ["Carmen-Semi-Bold", "sans"],
@@ -26,7 +28,22 @@ export default {
         CarmenThin: ["Carmen-Thin", "sans"],
         CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
-      fontSize: {}
+      fontSize: {
+        "sm": ["12px"],
+        "md": ["16px"],
+        "lg": ["16px"],
+      },
+      backgroundColor: {
+        "link-water": "#F7F9FD",
+        "malibu": "#6699FF"
+      },
+      borderColor: {
+        "athens-gray": "#E1E5EB",
+        "malibu": "#6699FF",
+      },
+      borderWidth: {
+        "1": "1px"
+      },
     },
   },
   plugins: []

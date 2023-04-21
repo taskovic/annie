@@ -9,8 +9,8 @@
   padding: 15px;
   
   p {
+    @apply text-md;
     color: #00283C;
-    font-size: 16px;
   }
 
   .annie-checkmark-box {}
