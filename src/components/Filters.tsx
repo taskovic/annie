@@ -1,6 +1,6 @@
-export default function Filters({ children }) {
+export default function Filters({ children }: any) {
     return (
-        <div className="annie-form">
+        <div className="annie-filters">
             { children }
         </div>
     )

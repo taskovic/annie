@@ -15,6 +15,8 @@ export default {
         "gray-400": "#e9edf5",
         "gray-600": "#e1e5eB",
         "gray-700": "#dadee5",
+        "malibu": "#6699FF",
+        "daintree": "#00283C",
         "mystic": "#dee4ea",
         "juniper": "#668993",
         "tiber": "#8195a1"
@@ -31,9 +33,24 @@ export default {
         CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
       fontSize: {
-        20: "1.25rem",
-      }
+        "sm": ["12px"],
+        "md": ["16px"],
+        "lg": ["16px"],
+        "20": ["1.25rem"],
+      },
+      backgroundColor: {
+        "link-water": "#F7F9FD",
+        "malibu": "#6699FF",
+      },
+      borderColor: {
+        "athens-gray": "#E1E5EB",
+        "malibu": "#6699FF",
+      },
+      borderWidth: {
+        "1": "1px"
+      },
     },
+    
   },
   plugins: []
 }
