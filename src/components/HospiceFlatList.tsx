@@ -9,23 +9,18 @@ import Rating from './Rating';
 import { Badge } from '@mui/material';
 import circle from '../assets/icons/circle-checkmark.svg'
 
-function createData(
+type Hospice = {
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return { name, calories, fat, carbs, protein };
+  lastName: string
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0)
-];
+interface IHospiceFlatList {
+  hospices: Hospice[]
+}
 
 export default function HospiceFlatList({ 
   hospices 
-}) {
+}: IHospiceFlatList) {
 
   console.log("HOSPICE_FLAT_LIST: ", hospices);
 
