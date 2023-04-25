@@ -8,9 +8,31 @@ import React, { useState, useEffect } from "react";
 import { Context } from "../contexts";
 import { navbarTabs } from "../configs";
 import ReferNewPatient from "../components/hoc/ReferNewPatient";
+import { getHospices } from "../api/dashboard";
 
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
+  const [hospices, setHospices] = useState([]);
+  const [filteredHospices, setFilteredHospices] = useState([]);
+  const [filters, setFilters] = useState(null);
+  const [isFetching, setFetchingStatus] = useState(true);
+
+  useEffect(() => {
+    getHospices()
+      .then((hospice) => {
+        const { data } = hospice;
+        setHospices(data);
+        setFilteredHospices(data);
+        setFetchingStatus(!isFetching);
+      })
+      .catch((err) => {
+        console.error(err);
+        /**
+         * If there is some kind of err push notification and loading screen stays for a while
+         */
+        //setFetchingStatus(!isFetching);
+      });
+  }, [filters]);
 
   function getComponent(name: string) {
     if (!name) return <h1>No View</h1>; // this can be loader
@@ -34,6 +56,8 @@ export default function Dashboard() {
   const ProviderRegistry = {
     activeTabName,
     setActiveTabName,
+    filteredHospices,
+    isFetching
   };
 
   return (

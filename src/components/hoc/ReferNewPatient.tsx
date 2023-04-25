@@ -1,21 +1,10 @@
-import { useEffect, useState } from "react";
-import { getHospices } from "../../api/dashboard";
+import { useContext } from "react";
 import HospiceFlatList from "../HospiceFlatList";
+import { Context } from "../../contexts";
+import { TContext } from "../../types/";
 
 export default function ReferNewPatient() {
-  const [hospices, setHospices] = useState([]);
-  const [filteredHospices, setFilteredHospices] = useState([]);
-  const [filters, setFilters] = useState({});
-
-  useEffect(() => {
-    getHospices()
-      .then((hospice) => {
-        const { data } = hospice;
-        setHospices(data);
-        setFilteredHospices(data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  const { filteredHospices, isFetching } = useContext(Context) as TContext;
 
   return (
     <>
