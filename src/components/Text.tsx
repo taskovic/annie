@@ -1,9 +1,7 @@
 interface Text {
-  content: string
+  content: string;
 }
 
-export default function Text({
-  content="Dummy text"
-}: Text) {
-  return <p className="annie-text">{ content }</p>
+export default function Text({ content = "Dummy text" }: Text) {
+  return <p className="annie-text">{content}</p>;
 }

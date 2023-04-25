@@ -1,6 +1,5 @@
-
 export type TContext = {
-  activeTabName: string,
-  setActiveTabName: Function,
-  handleTabClick: Function
-}
+  activeTabName: string;
+  setActiveTabName: Function;
+  handleTabClick: Function;
+};

@@ -1,135 +1,137 @@
 .annie-searchable-input-root {
-    position: relative;
+  position: relative;
+  width: 100%;
+  @apply font-CarmenSemiBold;
+
+  .menu-opened {
+    @apply bg-link-water #{!important};
+    @apply border-malibu #{!important};
+    @apply border-1;
+    @apply border-solid;
+    border-radius: 12px 12px 0px 0px !important;
+    border-bottom: none !important;
+    padding: 16px 16px 17px 22px !important;
+
+    input {
+      @apply bg-link-water #{!important};
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      bottom: 0;
+      height: 15px;
+      width: calc(100% - 32px);
+      border-bottom: 1px solid #e1e5eb;
+    }
+  }
+
+  .annie-searchable-input {
+    @apply border-athens-gray;
+    @apply border-1;
+    @apply border-solid;
+    height: 56px;
     width: 100%;
-    @apply font-CarmenSemiBold;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 16px 16px 16px 22px;
+    background-color: white;
 
-    .menu-opened {
-        @apply bg-link-water #{!important};
-        @apply border-malibu #{!important};
-        @apply border-1;
-        @apply border-solid;
-        border-radius: 12px 12px 0px 0px !important;
-        border-bottom: none !important;
-        padding: 16px 16px 17px 22px !important;
-
-        input {
-            @apply bg-link-water #{!important};
-        }
-
-        &:before {
-            content: "";
-            position: absolute;
-            left: 16px;
-            bottom: 0;
-            height: 15px;
-            width: calc(100% - 32px);
-            border-bottom: 1px solid #E1E5EB;
-        }
+    &:focus {
+      background-color: red !important;
     }
 
-    .annie-searchable-input {
-        @apply border-athens-gray;
-        @apply border-1;
-        @apply border-solid;
-        height: 56px;
-        width: 100%;
-        box-sizing: border-box;
-        border-width: 1px;
-        border-radius: 12px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: 16px 16px 16px 22px;
-        background-color: white;
+    .annie-searchable-input-input {
+      cursor: pointer;
+      user-select: none !important;
+      width: 100%;
+      background-color: transparent !important;
 
-        &:focus {
-            background-color: red !important;
-        }
-
-        .annie-searchable-input-input {
-            cursor: pointer;
-            user-select: none !important;
-            width: 100%;
-            background-color: transparent !important;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        .annie-searchable-input-icon {
-            margin-right: 12px;
-        }
-
-        .annie-searchable-input-button-open {
-            padding: 0px;
-            margin-left: 12px;
-            transition: .2s;
-        }
-
-        .annie-searchable-input-button-close {
-            padding: 0px;
-            margin-left: 12px;
-            transform: rotate(-180deg);
-            transition: .2s;
-        }
-
-        .annie-searchable-input-button-clear {
-            padding: 0px;
-            margin-left: 12px;
-            transition: .1s;
-        }
+      &:focus {
+        outline: none;
+      }
     }
 
-    .annie-searchable-input-listbox {
-        @apply bg-link-water;
-        @apply w-full;
-        @apply absolute;
-        @apply box-border;
-        @apply border-malibu;
-        @apply border-1;
-        @apply border-solid;
-        padding: 4px;
-        list-style: none;
-        overflow: auto;
-        max-height: 200px;
-        border-radius: 0px 0px 12px 12px;
-        border-top: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        &::-webkit-scrollbar-track {}
-
-        &::-webkit-scrollbar-thumb {}
-
-        li {
-            @apply text-sm;
-            @apply bg-link-water;
-            @apply text-daintree;
-            width: calc(100% - 8px);
-            height: 36px;
-            border-radius: 8px;
-            margin: 4px;
-            display: flex;
-            align-items: center;
-            padding: 0px 8px;
-
-            cursor: pointer;
-
-            .Mui-focused {
-                background-color: #E9F0FD;
-                cursor: pointer;
-            }
-
-            &:active {
-                background-color: #E9F0FD;
-            }
-
-            &:hover {
-                background-color: #E9F0FD;
-            }
-        }
+    .annie-searchable-input-icon {
+      margin-right: 12px;
     }
+
+    .annie-searchable-input-button-open {
+      padding: 0px;
+      margin-left: 12px;
+      transition: 0.2s;
+    }
+
+    .annie-searchable-input-button-close {
+      padding: 0px;
+      margin-left: 12px;
+      transform: rotate(-180deg);
+      transition: 0.2s;
+    }
+
+    .annie-searchable-input-button-clear {
+      padding: 0px;
+      margin-left: 12px;
+      transition: 0.1s;
+    }
+  }
+
+  .annie-searchable-input-listbox {
+    @apply bg-link-water;
+    @apply w-full;
+    @apply absolute;
+    @apply box-border;
+    @apply border-malibu;
+    @apply border-1;
+    @apply border-solid;
+    padding: 4px;
+    list-style: none;
+    overflow: auto;
+    max-height: 200px;
+    border-radius: 0px 0px 12px 12px;
+    border-top: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+    }
+
+    &::-webkit-scrollbar-thumb {
+    }
+
+    li {
+      @apply text-sm;
+      @apply bg-link-water;
+      @apply text-daintree;
+      width: calc(100% - 8px);
+      height: 36px;
+      border-radius: 8px;
+      margin: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0px 8px;
+
+      cursor: pointer;
+
+      .Mui-focused {
+        background-color: #e9f0fd;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: #e9f0fd;
+      }
+
+      &:hover {
+        background-color: #e9f0fd;
+      }
+    }
+  }
 }

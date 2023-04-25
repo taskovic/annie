@@ -1,5 +1,5 @@
-import axiosInstance from './';
+import axiosInstance from "./";
 
 export async function getHospices() {
-  return await axiosInstance.get('/todos');
+  return await axiosInstance.get("/todos");
 }

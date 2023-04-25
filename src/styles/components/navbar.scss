@@ -1,49 +1,48 @@
 .annie-navbar {
-    @apply w-full;
+  @apply w-full;
 
-    .annie-navbar-tabs {
-        .MuiButtonBase-root {
-            @apply box-border;
-            flex: 1;
-            height: 53px !important;
-            padding: 0px 0px 21px 0px !important;
-            min-height: 53px;
-        }
-
-        .MuiTouchRipple-root{
-            display: none;
-        }
-
-        .Mui-selected {
-            @apply text-malibu #{!important};
-        }
-
-        .MuiTab-iconWrapper {
-            @apply text-md;
-            @apply bg-malibu;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            margin-left: 12px;
-            opacity: 1 !important;
-        }
-
-        .MuiTab-textColorPrimary{
-            @apply text-md;
-            @apply font-CarmenSemiBold;
-            color: rgba(0, 40, 60, .5);
-            text-transform: capitalize;
-        }
-
-        .MuiTabs-indicator {
-            @apply bg-malibu;
-            height: 4px;
-            background-color: #6699FF;
-            
-        }
+  .annie-navbar-tabs {
+    .MuiButtonBase-root {
+      @apply box-border;
+      flex: 1;
+      height: 53px !important;
+      padding: 0px 0px 21px 0px !important;
+      min-height: 53px;
     }
+
+    .MuiTouchRipple-root {
+      display: none;
+    }
+
+    .Mui-selected {
+      @apply text-malibu #{!important};
+    }
+
+    .MuiTab-iconWrapper {
+      @apply text-md;
+      @apply bg-malibu;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-left: 12px;
+      opacity: 1 !important;
+    }
+
+    .MuiTab-textColorPrimary {
+      @apply text-md;
+      @apply font-CarmenSemiBold;
+      color: rgba(0, 40, 60, 0.5);
+      text-transform: capitalize;
+    }
+
+    .MuiTabs-indicator {
+      @apply bg-malibu;
+      height: 4px;
+      background-color: #6699ff;
+    }
+  }
 }

@@ -1,20 +1,20 @@
-import axios from 'axios';
+import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL // here needs to be checked if this is production or development
+  baseURL: import.meta.env.VITE_API_BASE_URL, // here needs to be checked if this is production or development
 });
 
 axiosInstance.interceptors.request.use(
-  config => {
-    const token = localStorage.getItem('token');
+  (config) => {
+    const token = localStorage.getItem("token");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
-  },
+  }
 );
 
 export default axiosInstance;

@@ -4,10 +4,10 @@
   width: 100%;
   height: 50px;
   border-radius: 12px;
-  border: 1px solid #E1E5EB;
+  border: 1px solid #e1e5eb;
   margin-top: 200px;
   margin-left: 200px;
-  
+
   .select-list-placeholder {
     width: inherit;
     height: inherit;
@@ -27,7 +27,7 @@
       @apply text-md;
       margin-left: -65px;
       font-weight: 500;
-      color: #00283C;
+      color: #00283c;
       mix-blend-mode: normal;
       opacity: 0.5;
     }
@@ -41,13 +41,12 @@
   }
 
   .opened-list {
-    transition: all .3s;
+    transition: all 0.3s;
     transform: rotateZ(180deg);
   }
-  
+
   .closed-list {
-    transition: all .3s;
+    transition: all 0.3s;
     transform: rotateZ(0deg);
   }
 }
-

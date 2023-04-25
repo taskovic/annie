@@ -1,9 +1,7 @@
 interface Icon {
-  name: string
+  name: string;
 }
 
-export default function Icon({
-  name
-}: Icon) {
-  return <img className="annie-icon" src={name} alt={"image alt"} />
+export default function Icon({ name }: Icon) {
+  return <img className="annie-icon" src={name} alt={"image alt"} />;
 }

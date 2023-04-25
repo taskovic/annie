@@ -1,5 +1,5 @@
 .annie-refer-checkbox-checked {
-  transition: all .3s;
+  transition: all 0.3s;
   width: 186px;
   height: 56px;
   border-radius: 12px !important;
@@ -30,16 +30,14 @@
     margin-right: 0px;
 
     img {
-      transition: all .3s;
+      transition: all 0.3s;
       @apply opacity-100;
     }
   }
-
 }
 
-
 .annie-refer-checkbox-unchecked {
-  transition: all .3s;
+  transition: all 0.3s;
   width: 186px;
   height: 56px;
   border-radius: 12px !important;
@@ -52,7 +50,7 @@
     @apply absolute;
     left: 24px;
     @apply font-CarmenMedium;
-    color: #00283C;
+    color: #00283c;
     font-size: 16px;
     text-transform: capitalize;
   }
@@ -70,9 +68,8 @@
     margin-right: 0px;
 
     img {
-      transition: all .3s;
+      transition: all 0.3s;
       @apply opacity-0;
     }
   }
-
 }

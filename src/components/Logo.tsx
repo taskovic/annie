@@ -3,7 +3,13 @@
 export default function Logo() {
   return (
     <div className="annie-logo">
-      <svg width="58" height="50" viewBox="0 0 58 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="58"
+        height="50"
+        viewBox="0 0 58 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -20,9 +26,16 @@ export default function Logo() {
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M30.3629 3.27369C35.1005 13.983 33.8952 26.0285 28.7041 35.1852C23.5116 26.0285 22.3076 13.983 27.0452 3.27369L28.7041 0L30.3629 3.27369Z"
-          fill="#3864AC" />
+          fill="#3864AC"
+        />
       </svg>
-      <svg width="190" height="50" viewBox="0 0 190 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="190"
+        height="50"
+        viewBox="0 0 190 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -72,5 +85,5 @@ export default function Logo() {
         />
       </svg>
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Context } from "../contexts/";
 import Logo from "./Logo";
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
 import SearchInput from "./SearchInput";
 import NotificationButton from "./NotificationButton";
 import ProfileButton from "./ProfileButton";
@@ -10,12 +10,11 @@ import NavBar from "./NavBar";
 import { TContext } from "../types/";
 
 export default function Header() {
-  const [notification, setNotification] = useState([{tab: navbarTabs[3],value: 3}]);
+  const [notification, setNotification] = useState([
+    { tab: navbarTabs[3], value: 3 },
+  ]);
 
-  const {
-    activeTabName,
-    setActiveTabName
-  }= useContext(Context) as TContext;
+  const { activeTabName, setActiveTabName } = useContext(Context) as TContext;
 
   return (
     <Box className="annie-header">
@@ -24,10 +23,18 @@ export default function Header() {
         <SearchInput placeholder="Search" />
       </Box>
       <Box className="notification-section">
-        <NotificationButton onClick={() => { alert("Notification") }} />
+        <NotificationButton
+          onClick={() => {
+            alert("Notification");
+          }}
+        />
       </Box>
       <Box className="profile-section">
-        <ProfileButton onClick={() => { alert("Profile") }} />
+        <ProfileButton
+          onClick={() => {
+            alert("Profile");
+          }}
+        />
       </Box>
       <Box className="navbar-section">
         <NavBar
@@ -38,5 +45,5 @@ export default function Header() {
         />
       </Box>
     </Box>
-  )
+  );
 }
