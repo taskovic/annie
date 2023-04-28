@@ -9,6 +9,8 @@ import { Context } from "../contexts";
 import { navbarTabs } from "../configs";
 import ReferNewPatient from "../components/hoc/ReferNewPatient";
 import { getHospices } from "../api/dashboard";
+import Modal from "../components/Modal";
+import ReferalModal from "../components/ReferalModal";
 
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
@@ -60,11 +62,23 @@ export default function Dashboard() {
     isFetching
   };
 
+  const [open, setOpen] = React.useState(true);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Context.Provider value={ProviderRegistry}>
       <div className="annie-dashboard">
         <Header />
         <Component />
+        <button onClick={handleOpen}>Open</button>
+        <ReferalModal open={open} handleClose={handleClose} />
       </div>
     </Context.Provider>
   );
