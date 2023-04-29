@@ -2,18 +2,18 @@ import { IconButton } from "@mui/material";
 import FileIcon from "assets/icons/uploaded-file.svg";
 import CloseIcon from "assets/icons/circle-x-cloes.svg";
 
-export interface FileHeaderProps {
+export interface FileinfoProps {
   file: File;
   onDelete: (file: File) => void;
 }
 
-export function FileInfo({ file, onDelete }: FileHeaderProps) {
+export function FileInfo({ file, onDelete }: FileinfoProps) {
   return (
-    <div className="annie-upload-file-header">
-      <div className="annie-upload-file-header-icon">
+    <div className="annie-upload-file-info">
+      <div className="annie-upload-file-info-icon">
         <img src={FileIcon} />
       </div>
-      <div className="annie-upload-file-header-content">
+      <div className="annie-upload-file-info-content">
         <div>
           <div className="file-name">{file.name}</div>
           <div className="file-info">

@@ -8,13 +8,16 @@ import ReferCheckbox from "components/forms/ReferCheckbox";
 import Filters from "features/Filters";
 import SearchableInput from "components/forms/SearchableInput";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import LoactionIcon from "assets/icons/location.svg";
 import CapabilitiesIcon from "assets/icons/capabilities.svg";
 import LanguageIcon from "assets/icons/language.svg";
 import Rating from "components/ui/Rating";
 import { Badge } from "@mui/material";
 import circle from "assets/icons/circle-checkmark.svg";
+
+import { TContext } from "types";
+import { Context } from "contexts";
 
 type Hospice = {
   name: string;
@@ -36,6 +39,12 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
 
   const gray = true;
   // const listItemStyle = gray ? "gray-list-item" : "white-list-item";
+
+  const { setOpenReferalModal } = useContext(Context) as TContext;
+
+  function handleOpenModal(){
+    setOpenReferalModal(true)
+  }
 
   return (
     <>
@@ -82,6 +91,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableRow
                 key={"sasad"}
                 className="annie-flat-list-item gray-list-item"
+                onClick={handleOpenModal}
               >
                 <TableCell className="list-item-1">
                   <ReferCheckbox
@@ -109,6 +119,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableRow
                 key={"sasad"}
                 className="annie-flat-list-item white-list-item"
+                onClick={handleOpenModal}
               >
                 <TableCell className="list-item-1">
                   <ReferCheckbox
@@ -136,6 +147,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableRow
                 key={"sasad"}
                 className="annie-flat-list-item gray-list-item"
+                onClick={handleOpenModal}
               >
                 <TableCell className="list-item-1">
                   <ReferCheckbox
@@ -163,6 +175,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableRow
                 key={"sasad"}
                 className="annie-flat-list-item white-list-item"
+                onClick={handleOpenModal}
               >
                 <TableCell className="list-item-1">
                   <ReferCheckbox

@@ -14,8 +14,9 @@ export default function ReferCheckbox({
 }: IReferCheckbox) {
   const [selected, setSelected] = useState(isSelected); //TODO: This will be removed after real impl
 
-  function handleCheckClick() {
+  function handleCheckClick(e: any) {
     //handleClick();
+    e.stopPropagation()
     setSelected(!selected);
   }
 

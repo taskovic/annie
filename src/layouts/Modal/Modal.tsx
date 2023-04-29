@@ -1,5 +1,5 @@
 import { Modal as ModalBase, Fade, IconButton } from "@mui/material";
-import CloseIcon from "../assets/icons/square-x-close.svg";
+import SquareXClose from "../../components/icons/SquareXClose/SquareXClose";
 
 interface ModalProps {
   open: boolean;
@@ -23,7 +23,7 @@ export default function Modal({ open, handleClose, children }: ModalProps) {
               className="annie-modal-close-button"
               onClick={handleClose}
             >
-              <img src={CloseIcon} alt="Close" />
+              <SquareXClose />
             </IconButton>
           </div>
         </Fade>
