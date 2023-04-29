@@ -1,0 +1,14 @@
+.upload-error {
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 12px;
+  margin-bottom: 8px;
+
+  .error-message {
+    font-size: 10px;
+    line-height: 14px;
+    color: red;
+    padding: 4px 8px;
+  }
+}

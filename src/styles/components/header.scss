@@ -52,39 +52,6 @@
       max-width: 477px;
       height: 60px;
     }
-
-    /*.search-section {
-      @apply relative;
-      @apply w-full;
-      max-width: 1089px;
-      height: 60px;
-
-      .search-input {
-        @apply w-full;
-        @apply box-border;
-        @apply bg-gray-400;
-        @apply border-2 border-gray-600;
-        @apply rounded-xl;
-        padding-left: 30px;
-        height: inherit;
-
-        &::placeholder {
-          @apply text-independence;
-          @apply opacity-40;
-          @apply not-italic;
-          @apply font-medium;
-          @apply text-base;
-          font-family: 'Carmen Sans';
-        }
-      }
-
-      .annie-icon {
-        @apply absolute;
-        right: 30px;
-        top: 18px;
-      }
-
-    }*/
   }
 
   .annie-nav {
