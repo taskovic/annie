@@ -16,9 +16,11 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const { refresh_token, token } = LocalStorage.getTokens();
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    console.log("config: ", config);
+    if (config.url === "/auth/login") return config; //TODO: Create routes enum and include login route here instead string
+    const accessToken = LocalStorage.getToken();
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
   },
@@ -42,16 +44,17 @@ axiosInstance.interceptors.response.use(
 
     isRefreshing = true;
     refreshToken();
+    return Promise.reject(error)
   }
 );
 
 async function refreshToken() {
   await axiosInstance
-    .post("/refresh_token")
+    .post("/auth/refresh-token")
     .then((response) => {
-      const { access_token } = response.data;
-      LocalStorage.setToken(access_token);
-      //TODO: Implement some business logic when token is refreshed
+      const { accessToken } = response.data;
+      LocalStorage.setToken(accessToken);
+      // TODO: Implement some business logic when token is refreshed
       isRefreshing = false;
     })
     .catch((error) => {

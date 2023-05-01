@@ -6,5 +6,5 @@ export async function login(data: TLogin) {
 }
 
 export async function logout(data: TLogout) {
-  return await axiosInstance.post("/logout", data);
+  return await axiosInstance.post("/auth/logout", data);
 }

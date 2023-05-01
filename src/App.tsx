@@ -13,7 +13,7 @@ function App() {
           {/**
            * Public routes
            */}
-          <Route index path="/" element={<Dashboard />} />
+          <Route index path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
 
           {/**
