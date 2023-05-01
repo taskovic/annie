@@ -9,6 +9,8 @@ import { Context } from "contexts";
 import { navbarTabs } from "configs";
 import ReferNewPatient from "features/ReferNewPatient";
 import { getHospices } from "api/dashboard";
+import Modal from "~/layouts/Modal/Modal";
+import ReferalModal from "~/features/ReferalModal/ReferalModal";
 
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
@@ -16,6 +18,7 @@ export default function Dashboard() {
   const [filteredHospices, setFilteredHospices] = useState([]);
   const [filters, setFilters] = useState(null);
   const [isFetching, setFetchingStatus] = useState(true);
+  const [openReferalModal, setOpenReferalModal] = useState(false);
 
   useEffect(() => {
     getHospices()
@@ -58,6 +61,8 @@ export default function Dashboard() {
     setActiveTabName,
     filteredHospices,
     isFetching,
+    openReferalModal,
+    setOpenReferalModal
   };
 
   return (
@@ -65,6 +70,9 @@ export default function Dashboard() {
       <div className="annie-dashboard">
         <Header />
         <Component />
+        <Modal open={openReferalModal} handleClose={()=>{setOpenReferalModal(false)}}>
+          <ReferalModal />
+        </Modal>
       </div>
     </Context.Provider>
   );

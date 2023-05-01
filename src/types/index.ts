@@ -4,6 +4,8 @@ export type TContext = {
   handleTabClick: Function;
   filteredHospices: any[];
   isFetching: boolean;
+  openReferalModal: boolean;
+  setOpenReferalModal: Function;
 };
 
 export type TLogin = {

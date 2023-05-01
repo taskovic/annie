@@ -1,16 +1,16 @@
-.annie-upload-file-header {
+.annie-upload-file-info {
   justify-content: space-between;
   align-items: center;
   display: flex;
   padding: 8px;
 
-  .annie-upload-file-header-icon {
+  .annie-upload-file-info-icon {
     padding: 8px;
     background-color: rgba(0, 40, 60, 0.1);
     border-radius: 12px;
   }
 
-  .annie-upload-file-header-content {
+  .annie-upload-file-info-content {
     flex: 1;
     display: flex;
     justify-content: space-between;

@@ -6,9 +6,9 @@ import {
   FileRejection,
   useDropzone,
 } from "react-dropzone";
-import { UploadedFileCardWithProgress } from "../UploadedFileWithProgress/UploadedFileCardWithProgress";
-import { UploadError } from "features/ReferalModal/UploadError/UploadError";
-import UlpoadIcon from "../assets/icons/upload-file.svg";
+import { UploadedFileCardWithProgress } from "./components/UploadedFileCardWithProgress/UploadedFileCardWithProgress";
+import { UploadError } from "./components/UploadError/UploadError";
+import UploadFileIcon from "../../icons/UploadFile/UploadFile";
 
 let currentId = 0;
 
@@ -79,7 +79,7 @@ export function FileUploader({ name }: { name: string }) {
       <div {...getRootProps({ className: getDropzoneClassName(isDragActive) })}>
         <input {...getInputProps()} />
         <div className="annie-dropzone-icon">
-          <img src={UlpoadIcon} />
+          <UploadFileIcon />
         </div>
         <div className="annie-dropzone-text">
           <div>

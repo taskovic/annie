@@ -1,16 +1,16 @@
-.single-file-upload-with-progress {
+.uploaded-file-card-with-progress {
   box-sizing: border-box;
   background-color: white;
   border: 1px solid #e1e5eb;
   border-radius: 12px;
   margin-bottom: 8px;
 
-  .single-file-upload-progress-container {
+  .uploaded-file-card-progress-container {
     display: flex;
     margin: 0px 17px 12px 64px;
     align-items: center;
 
-    .single-file-upload-progress {
+    .uploaded-file-card-progress {
       flex: 1;
       height: 6px;
       background-color: #e5e9eb;
@@ -22,7 +22,7 @@
       }
     }
 
-    .single-file-upload-progress-value {
+    .uploaded-file-card-progress-value {
       @apply font-CarmenSemiBold;
       font-size: 10px;
       line-height: 14px;

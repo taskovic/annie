@@ -1,5 +1,5 @@
 import { FileError } from "react-dropzone";
-import { FileInfo } from "~/features/ReferalModal/FileInfo/FileInfo";
+import { FileInfo } from "../FileInfo/FileInfo";
 
 export interface UploadErrorProps {
   file: File;

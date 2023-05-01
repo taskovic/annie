@@ -1,8 +1,8 @@
 import { LinearProgress } from "@mui/material";
 import { useEffect, useState } from "react";
-import { FileInfo } from "features/ReferalModal/FileInfo/FileInfo";
+import { FileInfo } from "../FileInfo/FileInfo";
 
-export interface SingleFileUploadWithProgressProps {
+export interface UploadedFileCardWithProgressProps {
   file: File;
   onDelete: (file: File) => void;
   onUpload: (file: File, url: string) => void;
@@ -12,7 +12,7 @@ export function UploadedFileCardWithProgress({
   file,
   onDelete,
   onUpload,
-}: SingleFileUploadWithProgressProps) {
+}: UploadedFileCardWithProgressProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -25,16 +25,16 @@ export function UploadedFileCardWithProgress({
   }, []);
 
   return (
-    <div className="single-file-upload-with-progress">
+    <div className="uploaded-file-card-with-progress">
       <FileInfo file={file} onDelete={onDelete} />
       {progress < 100 && (
-        <div className="single-file-upload-progress-container">
+        <div className="uploaded-file-card-progress-container">
           <LinearProgress
-            className="single-file-upload-progress"
+            className="uploaded-file-card-progress"
             variant="determinate"
             value={progress}
           />
-          <div className="single-file-upload-progress-value">{progress}%</div>
+          <div className="uploaded-file-card-progress-value">{progress}%</div>
         </div>
       )}
     </div>
