@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRouter from "router/privateRouter";
 import Dashboard from "views/dashboard";
 import Login from "views/login";
+import Logout from "views/logout/logout";
+import ResetPassword from "~/views/resetPassword/resetPassword";
+import SetNewPassword from "./views/setNewPassword/setNewPassword";
 import NotFound from "views/404";
 import "styles/index.scss";
 
@@ -13,14 +16,22 @@ function App() {
           {/**
            * Public routes
            */}
-          <Route index path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
 
           {/**
            *  Protected routes
            */}
-          <Route path="/test" element={<PrivateRouter />}>
-            <Route path="/test" element={<h1>Test</h1>} />
+          <Route path="/dashboard" element={<PrivateRouter />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+
+          <Route path="/reset-password" element={<PrivateRouter />}>
+            <Route path="/reset-password" element={<ResetPassword />} />
+          </Route>
+
+          <Route path="/set-new-password" element={<PrivateRouter />}>
+            <Route path="/set-new-password" element={<SetNewPassword />} />
           </Route>
 
           {/**

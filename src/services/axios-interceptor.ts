@@ -16,7 +16,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    console.log("config: ", config);
     if (config.url === "/auth/login") return config; //TODO: Create routes enum and include login route here instead string
     const accessToken = LocalStorage.getToken();
     if (accessToken) {
@@ -54,7 +53,7 @@ async function refreshToken() {
     .then((response) => {
       const { accessToken } = response.data;
       LocalStorage.setToken(accessToken);
-      // TODO: Implement some business logic when token is refreshed
+      //TODO: Implement some business logic when token is refreshed
       isRefreshing = false;
     })
     .catch((error) => {

@@ -1,0 +1,17 @@
+.annie-reset-password {
+    @apply w-full;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    h1 {
+      @apply font-CarmenSemiBold;
+      font-size: 2rem;
+    }
+  
+    a {
+      color: blue;
+    }
+  }
