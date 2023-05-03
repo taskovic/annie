@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRouter from "router/privateRouter";
 import Dashboard from "views/dashboard";
-import Login from "views/login";
+import Login from "~/views/login/login";
 import Logout from "views/logout/logout";
 import ResetPassword from "~/views/resetPassword/resetPassword";
 import SetNewPassword from "./views/setNewPassword/setNewPassword";
