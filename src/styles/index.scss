@@ -48,12 +48,10 @@
 }
 
 .app {
-  margin: auto auto;
-  aspect-ratio: 16 / 9;
-  max-width: 2000px;
+  position: absolute;
   width: 100%;
-  max-height: 1200px;
-  height: max-content;
+  height: 100%;
+  margin: auto auto !important;
 }
 
 // This is reset style which is obligated to reset all default behaviors of all elements who will be used in future development.
