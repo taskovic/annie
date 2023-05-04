@@ -27,7 +27,6 @@
       .list-item-2 {
         @apply font-CarmenMedium;
         @apply text-20;
-        @apply text-center;
       }
 
       .list-item-3 {
@@ -76,18 +75,19 @@
       .list-item-8 {
         @apply font-CarmenMedium;
         @apply text-20;
-        @apply text-right;
+        @apply text-center;
         @apply text-tiber;
       }
 
       .list-item-9 {
-        @apply text-right;
+        @apply text-center;
 
         .MuiBadge-root {
           width: 71px;
           height: 40px;
           background-color: #d3e1fe;
           border-radius: 20px;
+
 
           .MuiBadge-badge {
             @apply font-CarmenMedium;
@@ -106,6 +106,40 @@
 
     .white-list-item {
       @apply bg-white;
+    }
+  }
+
+  .annie-flat-list-head {
+
+    .list-head-item-1 {
+      border: none;
+    }
+
+    .list-head-item-2,
+    .list-head-item-6 {
+      flex: 2;
+      @apply font-CarmenMedium;
+      @apply text-md;
+      @apply text-daintree;
+      border: none;
+    }
+
+    .list-head-item-3,
+    .list-head-item-4,
+    .list-head-item-5,
+    .list-head-item-7,
+    .list-head-item-8,
+    .list-head-item-9 {
+      max-width: 100px;
+      @apply text-center;
+      @apply font-CarmenMedium;
+      @apply text-md;
+      @apply text-daintree;
+      border: none;
+    }
+
+    .list-head-item-6 {
+      @apply text-center;
     }
   }
 }

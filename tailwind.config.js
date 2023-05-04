@@ -19,7 +19,8 @@ export default {
         "daintree": "#00283C",
         "mystic": "#dee4ea",
         "juniper": "#668993",
-        "tiber": "#8195a1"
+        "tiber": "#8195a1",
+        "elephant": "#0C273A"
       },
       fontFamily: {
         CarmenSemiBold: ["Carmen-Semi-Bold", "sans"],
@@ -41,6 +42,8 @@ export default {
       backgroundColor: {
         "link-water": "#F7F9FD",
         "malibu": "#6699FF",
+        "san-marino": "#4263A8",
+        "tradewind": "#6ABEB5"
       },
       borderColor: {
         "athens-gray": "#E1E5EB",

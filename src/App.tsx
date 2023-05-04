@@ -16,7 +16,7 @@ function App() {
           {/**
            * Public routes
            */}
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Dashboard />} />
           <Route path="/logout" element={<Logout />} />
 
           {/**

@@ -61,6 +61,7 @@ export function FileUploader({ name }: { name: string }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
+    multiple: false,
     useFsAccessApi: false,
     accept: {
       "image/png": [".png"],
@@ -76,37 +77,50 @@ export function FileUploader({ name }: { name: string }) {
 
   return (
     <>
-      <div {...getRootProps({ className: getDropzoneClassName(isDragActive) })}>
-        <input {...getInputProps()} />
-        <div className="annie-dropzone-icon">
-          <UploadFileIcon />
-        </div>
-        <div className="annie-dropzone-text">
-          <div>
-            <span>Click to upload</span>
-            <p>&nbsp;or drag and drop</p>
+      {
+        files.length < 1 ?
+          <div {...getRootProps({ className: getDropzoneClassName(isDragActive) })}>
+            <input {...getInputProps()} />
+            <div className="annie-dropzone-icon">
+              <UploadFileIcon />
+            </div>
+            <div className="annie-dropzone-text">
+              <div>
+                <span>Click to upload</span>
+                <p>&nbsp;or drag and drop</p>
+              </div>
+              <p>Maximum file size 5MB</p>
+            </div>
           </div>
-          <p>Maximum file size 5MB</p>
-        </div>
-      </div>
+          :
+          <>
+            {files.map((fileWrapper, index) => (
+              <div key={fileWrapper.id}>
+                {
+                  index === 0 &&
+                  <>
+                    {fileWrapper.errors.length ? (
+                      <UploadError
+                        file={fileWrapper.file}
+                        errors={fileWrapper.errors}
+                        onDelete={onDelete}
+                      />
+                    ) : (
+                      <UploadedFileCardWithProgress
+                        onDelete={onDelete}
+                        onUpload={onUpload}
+                        file={fileWrapper.file}
+                      />
+                    )}
+                  </>
+                }
+              </div>
+            ))}
+          </>
+      }
 
-      {files.map((fileWrapper) => (
-        <div key={fileWrapper.id}>
-          {fileWrapper.errors.length ? (
-            <UploadError
-              file={fileWrapper.file}
-              errors={fileWrapper.errors}
-              onDelete={onDelete}
-            />
-          ) : (
-            <UploadedFileCardWithProgress
-              onDelete={onDelete}
-              onUpload={onUpload}
-              file={fileWrapper.file}
-            />
-          )}
-        </div>
-      ))}
+
+
     </>
   );
 }

@@ -1,0 +1,78 @@
+.annie-refet-to-patient-footer {
+    @apply font-CarmenRegular;
+    @apply bg-daintree;
+    width: calc(100% - 120px);
+    max-width: 1879px;
+    height: 156px;
+    margin: 0px 60px;
+    border-radius: 16px;
+    position: absolute;
+    bottom: 45px;
+    padding: 0px 158px 0px 474px;
+
+    &>img {
+        width: 284px;
+        height: 239px;
+        position: absolute;
+        top: -64px;
+        left: 50px;
+    }
+
+    &>div:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        &>div:nth-child(1) {
+            height: 100%;
+            max-width: 772px;
+
+            &>div:nth-child(1) {
+                color: white;
+                font-size: 32px;
+                margin-top: 10px;
+                margin-bottom: 8px;
+            }
+
+            &>div:nth-child(2) {
+                font-size: 20px;
+                color: white;
+                opacity: .5;
+                line-height: 28px;
+            }
+        }
+
+        &>div:nth-child(2) {
+            width: 297px;
+            height: 56px;
+
+            .send-referral-button {
+                background: #82A5F9;
+                border-radius: 12px;
+                height: 56px;
+                width: 100%;
+
+                &>div {
+                    height: 100%;
+                    display: flex;
+                    padding: 8px 8px 8px 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 16px;
+                    color: white;
+
+                    .send-referral-button-icon {
+                        width: 40px;
+                        height: 40px;
+                        background: rgba(255, 255, 255, 0.25);
+                        border-radius: 12px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
