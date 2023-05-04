@@ -18,7 +18,7 @@ function App() {
            */}
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           {/**
            *  Protected routes
            */}
