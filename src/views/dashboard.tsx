@@ -7,10 +7,10 @@ import Header from "../layouts/Header/Header";
 import { useState, useEffect } from "react";
 import { Context } from "contexts";
 import { navbarTabs } from "configs";
-import ReferNewPatient from "features/ReferNewPatient";
+import ReferNewPatient from "layouts/ReferNewPatient/ReferNewPatient";
 import { getHospices } from "api/dashboard";
-import Modal from "~/layouts/Modal/Modal";
-import ReferalModal from "~/features/ReferalModal/ReferalModal";
+import Modal from "layouts/Modal/Modal";
+import ReferalModal from "features/ReferalModal/ReferalModal";
 
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);

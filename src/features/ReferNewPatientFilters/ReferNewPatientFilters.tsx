@@ -1,26 +1,19 @@
 import { useContext, useState } from "react";
-import HospiceFlatList from "features/HospiceFlatList";
-import { Context } from "contexts";
-import { TContext } from "types";
+import Filters from "features/Filters";
+import SearchableInput from "components/forms/SearchableInput";
 import LoactionIcon from "assets/icons/location.svg";
 import CapabilitiesIcon from "assets/icons/capabilities.svg";
 import LanguageIcon from "assets/icons/language.svg";
-import Filters from "features/Filters";
-import SearchableInput from "components/forms/SearchableInput";
-import ReferToPatientFooter from "~/layouts/Footer/ReferToPatientFooter/ReferToPatientFooter";
 
-export default function ReferNewPatient() {
-  const { filteredHospices, isFetching } = useContext(Context) as TContext;
-
-  const selectData1 = ["One", "Two", "Three"];
+export default function ReferNewPatientFilters() {
+    const selectData1 = ["One", "Two", "Three"];
   const selectLoactionData = ["10010", "20010", "30010"];
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
+    const [value1, setValue1] = useState("");
+    const [value2, setValue2] = useState("");
+    const [value3, setValue3] = useState("");
 
-  return (
-    <>
-      <Filters>
+    return (
+    <Filters>
         <div className="filters-label">Select Zip</div>
         <div className="filters-input">
           <SearchableInput
@@ -56,8 +49,5 @@ export default function ReferNewPatient() {
           />
         </div>
       </Filters>
-      <HospiceFlatList hospices={filteredHospices} />
-      <ReferToPatientFooter />
-    </>
-  );
+    )
 }
