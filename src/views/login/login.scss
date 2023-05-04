@@ -1,0 +1,125 @@
+.annie-login-view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-wrapper {
+    max-width: 1150px;
+    width: 100%;
+    height: 777px;
+    border-radius: 24px;
+    display: flex;
+
+    .login-description {
+      max-width: 466px;
+      width: 100%;
+      height: inherit;
+      background-color: #0C273A;
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+        color: #fff;
+        @apply font-CarmenMedium;
+        margin-top: 80px;
+
+        span {
+          color: #82A5F9;
+        }
+      }
+
+      p {
+        max-width: 328px;
+        width: 100%;
+        @apply font-CarmenRegular;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+        margin-top: 30px;
+      }
+    }
+
+    .login-form {
+      max-width: 684px;
+      width: 100%;
+      height: inherit;
+      padding: 100px;
+      position: relative;
+
+      .annie-redirect-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+        color: #0C273A;
+        @apply font-CarmenMedium;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 16px;
+        color: #0C273A;
+        @apply font-CarmenMedium;
+        opacity: 0.25;
+        margin-bottom: 65px;
+      }
+
+      .annie-input-email {
+        padding: 0px;
+        margin-bottom: 15px;
+
+        img {
+          left: 15px;
+        }
+      }
+
+      .annie-input-password {
+        padding: 0px;
+        margin-bottom: 20px;
+        img {
+          left: 15px;
+        }
+      }
+      
+      .annie-error-message {
+        margin-bottom: 15px;
+      }
+
+      .remember-me {
+        @apply flex;
+        position: relative;
+        margin-bottom: 30px;
+
+        .forgot-password {
+          @apply font-CarmenRegular;
+          font-size: 10px;
+          position: absolute;
+          right: 0px;
+          top: 5px;
+          color: #6699FF;
+        }
+      }
+
+      .annie-cta-button {
+        float: right;
+      }
+
+
+
+    }
+
+  }
+    
+}
