@@ -3,6 +3,7 @@
   align-items: center;
   display: flex;
   padding: 8px;
+  max-width: 100%;
 
   .annie-upload-file-info-icon {
     padding: 8px;
@@ -18,12 +19,21 @@
     margin-left: 16px;
     margin-right: 8px;
 
+    &>div:nth-child(1) {
+      max-width: 100%;
+    }
+
     .file-name {
       @apply font-CarmenSemiBold;
       font-size: 12px;
       line-height: 17px;
       color: #00283c;
       margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 11vw;
+      max-width: 200px;
     }
 
     .file-info {

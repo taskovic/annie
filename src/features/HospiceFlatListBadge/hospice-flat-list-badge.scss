@@ -1,0 +1,98 @@
+.annie-badge {
+    @apply font-CarmenMedium;
+    height: 44px;
+    width: 88px;
+    margin: 0 auto;
+    position: relative;
+
+    .badge-content {
+        height: 44px;
+        width: 88px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        justify-content: space-between;
+        font-size: 20px;
+        color: white;
+    }
+
+    .bg-green {
+        @apply bg-tradewind;
+    }
+
+    .bg-blue {
+        @apply bg-san-marino;
+    }
+
+    .annie-badge-score {
+        width: 400px;
+        background-color: white;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        z-index: 999;
+        padding: 19px 19px 40px;
+        border: 1px solid rgba(12, 39, 58, 0.1);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        .badge-score-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(12, 39, 58, 0.1);
+            padding-bottom: 20px;
+
+            &>div:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &>div:nth-child(2) {
+                    @apply text-elephant;
+                    @apply text-md;
+                }
+            }
+        }
+
+        .badge-score-label {
+            @apply text-elephant;
+            opacity: .5;
+            font-size: 14px;
+        }
+
+        .badge-score-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .score-content-item {
+                margin-top: 20px;
+                width: 100%;
+
+                &>div:nth-child(1) {
+                    display: flex;
+                    justify-content: space-between;
+                    @apply text-elephant;
+                }
+
+                &>div:nth-child(2) {
+
+                    .score-item-value {
+                        flex: 1;
+                        height: 6px;
+                        background-color: rgba(12, 39, 58, 0.1);
+                        border-radius: 3px;
+                        margin-top: 6px;
+
+                        .MuiLinearProgress-barColorPrimary {
+                            background-color: #82A5F9 !important;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
