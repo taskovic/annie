@@ -6,6 +6,8 @@ import Logout from "views/logout/logout";
 import ResetPassword from "views/resetPassword/resetPassword";
 import SetNewPassword from "views/setNewPassword/setNewPassword";
 import ForgotPassword from "views/forgotPassword/forgotPassword";
+import EmailSended from "~/views/emailSended/EmailSended";
+import PasswordChanged from "~/views/passwordChanged/PasswordChanged";
 import NotFound from "views/404";
 import "styles/index.scss";
 
@@ -19,8 +21,11 @@ function App() {
            */}
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/set-new-password" element={<SetNewPassword />} />
+          <Route path="/email-sended" element={<EmailSended />} />
+          <Route path="/password-changed" element={<PasswordChanged />} />
           {/**
            *  Protected routes
            */}
@@ -32,9 +37,13 @@ function App() {
             <Route path="/reset-password" element={<ResetPassword />} />
           </Route>
 
-          <Route path="/set-new-password" element={<PrivateRouter />}>
+           {/* <Route path="/forgot-password" element={<PrivateRouter />}>
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+          </Route> */}
+
+          {/* <Route path="/set-new-password" element={<PrivateRouter />}>
             <Route path="/set-new-password" element={<SetNewPassword />} />
-          </Route>
+          </Route> */}
 
           {/**
            * 404 route

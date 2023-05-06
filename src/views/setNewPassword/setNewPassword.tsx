@@ -1,61 +1,31 @@
-import { useState, useEffect } from "react";
-import LocalStorage from "services/local-storage";
-import { useNavigate } from "react-router-dom";
-import { updatePassword } from "api/auth";
-import "./style.scss";
+import SetNewPasswordForm from "features/SetNewPasswordForm/SetNewPasswordForm";
+import LogoWhite from "components/ui/LogoWhite/LogoWhite";
+import RedirectButton from "components/ui/RedirectButton/RedirectButton";
+import setNewPassword from "assets/images/set-new-password.svg";
+import "./set-new-password.scss";
 
 export default function SetNewPassword() {
-  const initalFormData = {
-    oldPassword: null,
-    newPassword: null,
-    repeatPassword: null
-  }
-
-  const [formData, setFormData] = useState(initalFormData);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const { newPassword, repeatPassword } = formData;
-  useEffect(() => {
-    return () => {
-      setFormData(initalFormData)
-      setError("");
-    }
-  }, []);
-
-  function handleSubmit(): void {
-    if (newPassword !== repeatPassword) return setError("Password don't match. Try again.");
-    const userData = LocalStorage.getUserData();
-    const { user: { id } } = userData;
-    const passwords = {
-      newPassword: formData.newPassword,
-      oldPassword: formData.oldPassword
-    }
-    updatePassword(id, passwords)
-      .then(() => {
-        LocalStorage.clear();
-        navigate("/login");
-      }).catch(() => {
-        setError("Error while updating password. Try again.")
-      });
-  }
-
   return (
-  <div className="annie-set-new-password">
-    <div>
-      <div>
-        <input type="password" name="oldPassword" placeholder="Old password" onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
+    <div className="annie-set-new-password-view">
+      <div className="new-password-wrapper">
+        <div className="new-password-description">
+          <LogoWhite />
+          <h1>
+            <span>Compassionate</span> care for life's most precious moments.
+          </h1>
+          <p>
+            Together, we can ensure exceptional care for every family, 
+            starting with our most vulnerable patients nearing end-of-life
+          </p>
+        </div>
+        <div className="new-password-form">
+          <RedirectButton path={"/login"} text={"Back to Login"} />
+          <img className="forgot-icon" src={setNewPassword} alt="Set new password icon" />
+          <h1>Set a new password</h1>
+          <p>Your new password must be different to your previously used password.</p>
+          <SetNewPasswordForm />
+        </div>
       </div>
-      <div>
-        <input type="password" name="newPassword" placeholder="New password" onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
-      </div>
-      <div>
-        <input type="password" name="repeatPassword" placeholder="Repeat password" onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
-      </div>
-      <button type="submit" disabled={!repeatPassword || !newPassword} onClick={handleSubmit}>
-        Submit
-      </button>
-      <p>{error}</p>
     </div>
-  </div>
   );
 }
