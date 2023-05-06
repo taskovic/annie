@@ -1,6 +1,5 @@
 import InputPassword from "components/forms/InputPassword/InputPassword";
 import { useState } from "react";
-// import { login } from "api/auth";
 import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
@@ -61,7 +60,7 @@ export default function SetNewPasswordForm() {
     }
     <CTAButton
       text="Update Password"
-      onClick={() => console.log("sta se radi")} />
+      onClick={handleSubmit} />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import InputEmail from "components/forms/InputEmail/InputEmail";
 import { useState } from "react";
-// import { login } from "api/auth";
 import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
@@ -12,11 +11,12 @@ export default function ForgotPasswordForm() {
     email: "",
   });
   
-  const [hasError, setError] = useState("Incorrect email or password");
+  const [hasError, setError] = useState("");
   const navigate = useNavigate();
   const { email } = formData;
 
   function handleSubmit() {
+    if (!email) return setError("Email must be provided.");
     // if (!email || !password) return setError("EMAIL OR PASSWORD MUST BE PROVIDED");
     // login(formData)
     // .then((response) => {
@@ -43,13 +43,13 @@ export default function ForgotPasswordForm() {
         email={email}
         placeholder="Email Address" />
       { hasError &&
-      <ErrorMessage 
-        message={hasError} 
-        onClick={() =>setError("")} />
+        <ErrorMessage 
+          message={hasError} 
+          onClick={() =>setError("")} />
       }
       <CTAButton
         text="Reset Password"
-        onClick={() => console.log("sta se radi")} />
+        onClick={handleSubmit} />
     </>
   );
 }
