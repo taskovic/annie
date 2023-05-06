@@ -16,12 +16,12 @@ export default function LoginForm() {
     password: "",
   });
   
-  const [hasError, setError] = useState("Incorrect email or password");
+  const [hasError, setError] = useState("");
   const navigate = useNavigate();
   const { email, password } = formData;
 
   function handleSubmit() {
-    if (!email || !password) return setError("EMAIL OR PASSWORD MUST BE PROVIDED");
+    if (!email || !password) return setError("Email or password must be provided.");
     login(formData)
     .then((response) => {
       if (response) {
@@ -30,7 +30,7 @@ export default function LoginForm() {
         navigate('/dashboard');
       }
     }).catch(error => {
-      setError(error);
+      setError(error); 
       console.log("LOGIN ERROR: ", error)
     })
   }
@@ -51,9 +51,9 @@ export default function LoginForm() {
         password={password}
         placeholder="Password" />
       { hasError &&
-      <ErrorMessage 
-        message={hasError} 
-        onClick={() =>setError("")} />
+        <ErrorMessage 
+          message={hasError} 
+          onClick={() =>setError("")} />
       }
       <div className="remember-me">
         <InputCheckbox 
@@ -64,7 +64,7 @@ export default function LoginForm() {
       </div>
       <CTAButton
         text="Login"
-        onClick={() => console.log("sta se radi")} />
+        onClick={handleSubmit} />
     </>
   );
 }
