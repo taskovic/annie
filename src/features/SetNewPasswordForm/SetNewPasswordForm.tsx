@@ -1,20 +1,22 @@
-import InputEmail from "components/forms/InputEmail/InputEmail";
+import InputPassword from "components/forms/InputPassword/InputPassword";
 import { useState } from "react";
 // import { login } from "api/auth";
 import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
+import PasswordStrength from "components/forms/PasswordStrength/PasswordStrength";
 
-export default function ForgotPasswordForm() {
+export default function SetNewPasswordForm() {
 
   const [formData, setFormData] = useState({
-    email: "",
+    password: "",
+    rePassword: ""
   });
   
   const [hasError, setError] = useState("Incorrect email or password");
   const navigate = useNavigate();
-  const { email } = formData;
+  const { password, rePassword } = formData;
 
   function handleSubmit() {
     // if (!email || !password) return setError("EMAIL OR PASSWORD MUST BE PROVIDED");
@@ -38,18 +40,28 @@ export default function ForgotPasswordForm() {
 
   return (
     <>
-      <InputEmail 
-        onChange={handleInputChange} 
-        email={email}
-        placeholder="Email Address" />
-      { hasError &&
-      <ErrorMessage 
-        message={hasError} 
-        onClick={() =>setError("")} />
-      }
-      <CTAButton
-        text="Reset Password"
-        onClick={() => console.log("sta se radi")} />
+    <InputPassword
+      password={password} 
+      onChange={handleInputChange}
+      placeholder="New Password"
+      />
+    
+    <PasswordStrength />
+
+    <InputPassword
+      password={rePassword} 
+      onChange={handleInputChange}
+      placeholder="Repeat new password"
+      name="rePassword"
+      />
+    { hasError &&
+    <ErrorMessage 
+      message={hasError} 
+      onClick={() =>setError("")} />
+    }
+    <CTAButton
+      text="Update Password"
+      onClick={() => console.log("sta se radi")} />
     </>
   );
 }
