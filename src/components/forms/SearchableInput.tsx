@@ -13,6 +13,7 @@ interface Props {
   searchable: boolean;
   placeholder?: string;
   onChange: Function;
+  name?: string;
 }
 
 export default function SearchableInput({

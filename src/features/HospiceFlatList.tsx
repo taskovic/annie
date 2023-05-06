@@ -22,18 +22,27 @@ import { Context } from "contexts";
 import HospiceFlatListBadge from "./HospiceFlatListBadge/HospiceFlatListBadge";
 
 type Hospice = {
+  id: number;
+  checked: boolean;
   name: string;
-  lastName: string;
+  value1: boolean;
+  value2: number;
+  value3: number;
+  value4: number;
+  value5: number;
+  value6: number;
+  value7: number;
 };
 
 interface IHospiceFlatList {
   hospices: Hospice[];
+  handleCheck: Function;
 }
 
-export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
+export default function HospiceFlatList({ hospices, handleCheck }: IHospiceFlatList) {
   console.log("HOSPICE_FLAT_LIST: ", hospices);
 
-
+  const [selectedScoreIndex, setSelectedScoreIndex] = useState(-1)
 
   const gray = true;
   // const listItemStyle = gray ? "gray-list-item" : "white-list-item";
@@ -52,7 +61,6 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
             <TableRow
               key={"sasad"}
               className="annie-flat-list-head"
-              onClick={handleOpenModal}
             >
               <TableCell className="list-head-item-1"></TableCell>
               <TableCell className="list-head-item-2">Hospice</TableCell>
@@ -66,7 +74,45 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow
+            {
+              hospices.map((hospice, index) => {
+                return (
+                  <TableRow
+                    key={"hoepice-" + index}
+                    className="annie-flat-list-item gray-list-item"
+                  >
+                    <TableCell className="list-item-1">
+                      <ReferCheckbox
+                        isSelected={hospice.checked}
+                        handleClick={() => {handleCheck(hospice)}}
+                      />
+                    </TableCell>
+                    <TableCell className="list-item-2">
+                      {hospice.name}
+                    </TableCell>
+                    <TableCell className="list-item-3">
+                      <img src={circle} alt="checkmark" />
+                    </TableCell>
+                    <TableCell className="list-item-4">{hospice.value2} %</TableCell>
+                    <TableCell className="list-item-5">{hospice.value3} hrs</TableCell>
+                    <TableCell className="list-item-6">
+                      <Rating rating={hospice.value4} />
+                    </TableCell>
+                    <TableCell className="list-item-7">{hospice.value5} %</TableCell>
+                    <TableCell className="list-item-8">{hospice.value6} %</TableCell>
+                    <TableCell className="list-item-9">
+                      <HospiceFlatListBadge
+                        open={selectedScoreIndex === index}
+                        value={hospice.value7}
+                        handleOpen={()=>{setSelectedScoreIndex(index)}}
+                        handleClose={()=>{setSelectedScoreIndex(-1)}}
+                      />
+                    </TableCell>
+                  </TableRow>
+                )
+              })
+            }
+            {/*<TableRow
               key={"sasad"}
               className="annie-flat-list-item gray-list-item"
               onClick={handleOpenModal}
@@ -83,7 +129,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableCell className="list-item-3">
                 <img src={circle} alt="checkmark" />
               </TableCell>
-              <TableCell className="list-item-4">2 hrs</TableCell>
+              <TableCell className="list-item-4">2 %</TableCell>
               <TableCell className="list-item-5">12 hrs</TableCell>
               <TableCell className="list-item-6">
                 <Rating rating={4} />
@@ -177,7 +223,7 @@ export default function HospiceFlatList({ hospices }: IHospiceFlatList) {
               <TableCell className="list-item-9">
                 <HospiceFlatListBadge value={6} />
               </TableCell>
-            </TableRow>
+  </TableRow>*/}
           </TableBody>
         </Table>
       </TableContainer>

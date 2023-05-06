@@ -1,0 +1,97 @@
+.annie-referal-sent-modal-root {
+    border-radius: 16px !important;
+    width: 530px !important;
+    height: 514px !important;
+
+    .annie-modal-close-button {
+        display: none !important;
+    }
+
+    .annie-referal-sent-modal {
+        @apply font-CarmenMedium;
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        width: 100%;
+        align-items: center;
+
+        &>img {
+            width: 270px;
+            height: 270px;
+        }
+
+        &>p:nth-child(2) {
+            margin-top: 32px;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &>p:nth-child(3) {
+            font-size: 12px;
+            line-height: 16px;
+            color: #0C273A;
+            opacity: .25;
+            margin-top: 12px;
+        }
+
+        &>div:nth-child(4) {
+            margin-top: 32px;
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+
+            .button-1 {
+                background: #46c1b5;
+                border-radius: 12px;
+                width: 225px;
+                height: 48px;
+
+                &>div {
+                    height: 100%;
+                    display: flex;
+                    padding: 6px 6px 6px 16px;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: white;
+
+                    .button-icon {
+                        width: 36px;
+                        height: 36px;
+                        background: rgba(255, 255, 255, 0.25);
+                        border-radius: 12px;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .button-2 {
+                background: rgba(12, 39, 58, 0.1);;
+                border-radius: 12px;
+                width: 225px;
+                height: 48px;
+
+                &>div {
+                    height: 100%;
+                    display: flex;
+                    padding: 6px 6px 6px 16px;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #0C273A;
+
+                    .button-icon {
+                        width: 36px;
+                        height: 36px;
+                        background: rgba(255, 255, 255, 0.25);
+                        border-radius: 12px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
