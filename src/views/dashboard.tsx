@@ -70,9 +70,6 @@ export default function Dashboard() {
       <div className="annie-dashboard">
         <Header />
         <Component />
-        <Modal open={openReferalModal} handleClose={()=>{setOpenReferalModal(false)}}>
-          <ReferalModal />
-        </Modal>
       </div>
     </Context.Provider>
   );

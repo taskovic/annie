@@ -4,18 +4,17 @@
     width: calc(100% - 120px);
     max-width: 1879px;
     height: 156px;
-    margin: 0px 60px;
+    margin: 100px 60px 0px 60px;
     border-radius: 16px;
-    position: absolute;
-    bottom: 45px;
-    padding: 0px 158px 0px 474px;
+    position: relative;
+    padding: 0px 32px 0px 334px;
 
     &>img {
         width: 284px;
         height: 239px;
         position: absolute;
         top: -64px;
-        left: 50px;
+        left: 18px;
     }
 
     &>div:nth-child(2) {
@@ -30,21 +29,23 @@
 
             &>div:nth-child(1) {
                 color: white;
-                font-size: 32px;
-                margin-top: 10px;
-                margin-bottom: 8px;
+                font-size: 20px;
+                line-height: 24px;
+                margin-top: 32px;
+                margin-bottom: 12px;
             }
 
             &>div:nth-child(2) {
-                font-size: 20px;
+                font-size: 12px;
                 color: white;
                 opacity: .5;
-                line-height: 28px;
+                line-height: 16px;
             }
         }
 
         &>div:nth-child(2) {
-            width: 297px;
+            width: 100%;
+            max-width: 297px;
             height: 56px;
 
             .send-referral-button {

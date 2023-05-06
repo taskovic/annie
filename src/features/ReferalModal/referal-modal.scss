@@ -1,82 +1,206 @@
-.annie-referal-modal {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  @apply font-CarmenSemiBold;
+.annie-referal-modal-root {
 
-  .refer-hospice {
-    position: relative;
-    width: 30%;
-    max-width: 432px;
-    height: calc(100% - 48px);
-    box-sizing: border-box;
-    background: #00283c;
-    border-radius: 32px;
-    margin: 24px 0px 24px 24px;
+  width: 95% !important;
 
-    img {
-      position: absolute;
-      max-width: 384px;
-      max-height: 338px;
-      right: -84px;
-      bottom: 0px;
-    }
+  @screen laptop {
+    max-width: 1141px !important;
   }
 
-  .referal-modal-form-container {
-    flex: 1;
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @screen desktop {
+    max-width: 1564px !important;
   }
 
-  .referal-modal-form {
-    width: 90%;
-    max-width: 772px;
-    height: 536px;
+  .annie-referal-modal {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    padding: 16px;
+    @apply font-CarmenSemiBold;
 
-    & > div {
-      width: 48%;
-      max-width: 366px;
+    .refer-hospice {
+      position: relative;
+      width: 20%;
+      min-width: 245px;
+      max-width: 432px;
       box-sizing: border-box;
+      background: #00283c;
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
 
-      & > p {
-        font-size: 16px;
-        line-height: 24px;
-      }
+      .refer-hospice-list-root {
+        flex: 1;
+        width: 100%;
+        padding: 72px 24px;
 
-      .referal-modal-form-attachments {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+        &>P {
+          font-size: 12px;
+          line-height: 16px;
+          color: rgba(255, 255, 255, 0.25);
+          margin-bottom: 24px;
+        }
 
-        .send-referral-button {
-          background: #46c1b5;
-          border-radius: 12px;
-          height: 56px;
+        .refer-hospice-list-item {
+          height: 44px;
           width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
 
-          & > div {
-            height: 100%;
+          &>div:nth-child(2) {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 10px;
+            line-height: 12px;
             display: flex;
-            padding: 8px 8px 8px 20px;
+            flex-direction: row-reverse;
             justify-content: space-between;
             align-items: center;
-            font-size: 16px;
-            color: white;
 
-            .send-referral-button-icon {
-              width: 40px;
-              height: 40px;
+            &>div:nth-child(1) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 20px;
               background: rgba(255, 255, 255, 0.25);
-              border-radius: 12px;
-              padding: 8px;
+              border-radius: 100px;
+              color: #FFFFFF;
+              font-size: 10px;
+              line-height: 12px;
+            }
+
+          }
+
+          &>p {
+            color: white;
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+
+        .refer-hospice-list-divider {
+          width: 100%;
+          height: 1px;
+          opacity: 0.5;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          margin: 12px 0px;
+        }
+      }
+
+      &>img {
+        position: absolute;
+        width: 110%;
+        right: -84px;
+        bottom: 0px;
+      }
+    }
+
+    .referal-modal-form-container {
+      margin-left: 20px;
+      display: flex;
+      width: 80%;
+      justify-content: center;
+      align-items: center;
+      padding: 90px 0px;
+    }
+
+    .referal-modal-form {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+
+
+      &>div:nth-child(1) {
+        width: 40%;
+        min-width: 270px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+
+        &>p {
+          font-size: 12px;
+          line-height: 16px;
+          margin-bottom: 6px;
+        }
+      }
+
+      &>div:nth-child(2) {
+        @screen laptop {
+          max-width: 366px;
+        }
+
+        @screen desktop {
+          max-width: 60%;
+        }
+
+        margin-left: 25px;
+        box-sizing: border-box;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+
+        p {
+          font-size: 12px;
+          line-height: 16px;
+
+          &>span {
+            //@apply font-CarmenLight;
+            width: 67px;
+            height: 20px;
+            font-size: 10px;
+            padding: 4px 8px;
+            background: #F9ECEC;
+            border-radius: 100px;
+            color: #C34343;
+          }
+        }
+
+        .referal-modal-form-attachments {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+
+          .send-referral-button {
+            background: #46c1b5;
+            border-radius: 12px;
+            height: 56px;
+            width: 100%;
+
+            &>div {
+              height: 100%;
+              display: flex;
+              padding: 8px 8px 8px 20px;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 16px;
+              color: white;
+
+              .send-referral-button-icon {
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 12px;
+                padding: 8px;
+              }
+            }
+          }
+
+          .referal-modal-question-wrapper {
+            width: 100%;
+            margin: 24px 0px;
+
+            .referal-modal-question {
+              margin: 4px 0px;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              .question-text {
+                @apply font-CarmenRegular;
+                width: 45%;
+                font-size: 10px;
+                line-height: 12px;
+              }
             }
           }
         }

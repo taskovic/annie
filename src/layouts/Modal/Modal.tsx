@@ -5,9 +5,10 @@ interface ModalProps {
   open: boolean;
   handleClose: any;
   children: any;
+  className?: string;
 }
 
-export default function Modal({ open, handleClose, children }: ModalProps) {
+export default function Modal({ open, handleClose, children, className }: ModalProps) {
   return (
     <div>
       <ModalBase
@@ -17,13 +18,15 @@ export default function Modal({ open, handleClose, children }: ModalProps) {
         closeAfterTransition
       >
         <Fade in={open}>
-          <div className="annie-modal-content">
+          <div className={`annie-modal-content ${className}`}>
             {children}
             <IconButton
               className="annie-modal-close-button"
               onClick={handleClose}
             >
-              <SquareXClose />
+              <div>
+                <SquareXClose />
+              </div>
             </IconButton>
           </div>
         </Fade>

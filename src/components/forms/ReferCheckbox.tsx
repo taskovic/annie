@@ -15,12 +15,12 @@ export default function ReferCheckbox({
   const [selected, setSelected] = useState(isSelected); //TODO: This will be removed after real impl
 
   function handleCheckClick(e: any) {
-    //handleClick();
+    handleClick();
     e.stopPropagation()
-    setSelected(!selected);
+    //setSelected(!selected);
   }
 
-  const buttonVariant = selected ? "checked" : "unchecked";
+  const buttonVariant = isSelected ? "checked" : "unchecked";
 
   return (
     <Button
