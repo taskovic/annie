@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LocalStorage from "services/local-storage";
-import { resetPassword } from "api/auth";
+// import { resetPassword } from "api/auth";
 import "./style.scss";
 
 export default function ResetPassword() {
@@ -11,12 +11,12 @@ export default function ResetPassword() {
   useEffect(() => {
     const userEmail = LocalStorage.userEmail();
     if (!userEmail) return setErrorMessage("Error while trying to get reset password screen");
-    resetPassword(userEmail)
-      .then((response) => {
-        navigate("/set-new-password");
-      }).catch(() => {
-        return setErrorMessage("Error while trying to get reset password screen");
-      });
+    // resetPassword(userEmail)
+    //   .then((response) => {
+    //     navigate("/set-new-password");
+    //   }).catch(() => {
+    //     return setErrorMessage("Error while trying to get reset password screen");
+    //   });
   }, []);
 
   return (

@@ -1,6 +1,5 @@
 import InputEmail from "components/forms/InputEmail/InputEmail";
 import { useState } from "react";
-import { login } from "api/auth";
 import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
 import InputPassword from "components/forms/InputPassword/InputPassword";
@@ -8,35 +7,53 @@ import InputCheckbox from "components/forms/InputCheckbox/InputCheckbox";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ForgotPasswordButton from "components/ui/ForgotPasswordButton/ForgotPasswordButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
+import { useLoginMutation } from "api/authSlice";
 
 export default function LoginForm() {
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    rememberMe: true
   });
-  
-  const [hasError, setError] = useState("");
-  const navigate = useNavigate();
   const { email, password } = formData;
+  const navigate = useNavigate();
+
+  const [
+    login,
+    { 
+      data,
+      isLoading, 
+      isSuccess,
+      isError,
+      error 
+    }
+   ] = useLoginMutation();
+  const [hasError, setError] = useState<string | null>(null);
+  
+   if (isLoading) {
+    console.log("Loading... ");
+   }
+
+   if (isSuccess) {
+    LocalStorage.setUser(data);
+    navigate("/dashboard");
+   }
+
+   if (isError) {
+    console.error("LoginError: ", error);
+   }
 
   function handleSubmit() {
     if (!email || !password) return setError("Email or password must be provided.");
-    login(formData)
-    .then((response) => {
-      if (response) {
-        const { data } = response;
-        LocalStorage.setUser(data);
-        navigate('/dashboard');
-      }
-    }).catch(error => {
-      setError(error); 
-      console.log("LOGIN ERROR: ", error)
-    })
+    login(formData);
   }
 
   function handleInputChange(e: any) {
     const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
+  function handleCheckboxChange(name: string, value: boolean) {
     setFormData({ ...formData, [name]: value });
   }
 
@@ -45,26 +62,29 @@ export default function LoginForm() {
       <InputEmail 
         onChange={handleInputChange} 
         email={email}
+        hasError={hasError ? true : false}
         placeholder="Email Address" />
       <InputPassword 
         onChange={handleInputChange} 
         password={password}
+        hasError={hasError ? true : false}
         placeholder="Password" />
       { hasError &&
         <ErrorMessage 
           message={hasError} 
-          onClick={() =>setError("")} />
+          onClick={() => setError("")} />
       }
       <div className="remember-me">
         <InputCheckbox 
-          onChange={handleInputChange} 
+          onChange={handleCheckboxChange} 
           name="remember"
-          placeholder="Remember me" />
-        <ForgotPasswordButton path="/sdasds" />
+          placeholder="Remember me"
+          checked={formData.rememberMe} />
+        <ForgotPasswordButton path="/forgot-password" />
       </div>
       <CTAButton
         text="Login"
-        onClick={handleSubmit} />
+        click={handleSubmit} />
     </>
   );
 }

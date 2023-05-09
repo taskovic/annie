@@ -3,17 +3,17 @@ import "./cta-button.scss";
 
 interface ICTAButton {
   text: string,
-  onClick: Function
+  click: Function
 }
 
 export default function CTAButton({
   text,
-  onClick
+  click
 }: ICTAButton) {
   return (
     <button
       className="annie-cta-button" 
-      onClick={onClick()}>
+      onClick={() => click()}>
       { text }
       <span>
         <CTA />

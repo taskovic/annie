@@ -7,5 +7,5 @@ interface IShowPassword {
 export default function ShowPassword({
   onClick
 }: IShowPassword) {
-  return <img className="show-password" src={showPassword} alt="Show password icon" onClick={onClick()} />;
+  return <img className="show-password" src={showPassword} alt="Show password icon" onClick={() => onClick()} />;
 }

@@ -1,34 +1,29 @@
+import { useEffect } from "react";
 import InputEmail from "components/forms/InputEmail/InputEmail";
 import { useState } from "react";
-import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
+import { forgotPassword } from "~/api/auth";
 
 export default function ForgotPasswordForm() {
-
   const [formData, setFormData] = useState({
     email: "",
   });
   
-  const [hasError, setError] = useState("");
+  const [hasError, setError] = useState<string | null>(null);
   const navigate = useNavigate();
   const { email } = formData;
 
   function handleSubmit() {
     if (!email) return setError("Email must be provided.");
-    // if (!email || !password) return setError("EMAIL OR PASSWORD MUST BE PROVIDED");
-    // login(formData)
-    // .then((response) => {
-    //   if (response) {
-    //     const { data } = response;
-    //     LocalStorage.setUser(data);
-    //     navigate('/dashboard');
-    //   }
-    // }).catch(error => {
-    //   setError(error);
-    //   console.log("LOGIN ERROR: ", error)
-    // })
+    forgotPassword(email)
+      .then(() => {
+        navigate("/email-sended");
+      }).catch((err) => {
+        console.log("forgotpasswordERROR: ", err);
+        return setError("Server error");
+      });
   }
 
   function handleInputChange(e: any) {
@@ -41,6 +36,7 @@ export default function ForgotPasswordForm() {
       <InputEmail 
         onChange={handleInputChange} 
         email={email}
+        hasError={hasError ? true : false}
         placeholder="Email Address" />
       { hasError &&
         <ErrorMessage 
@@ -49,7 +45,7 @@ export default function ForgotPasswordForm() {
       }
       <CTAButton
         text="Reset Password"
-        onClick={handleSubmit} />
+        click={handleSubmit} />
     </>
   );
 }

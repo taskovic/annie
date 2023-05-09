@@ -16,3 +16,11 @@ export type TLogin = {
 export type TLogout = {
   token: string;
 };
+
+export type TSetNewPasswordStrength = {
+  minChar: string,
+  containNumber: string,
+  uppercaseChar: string,
+  specialChar: string,
+  lowercaseChar: string
+}

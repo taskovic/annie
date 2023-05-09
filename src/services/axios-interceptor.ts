@@ -1,14 +1,8 @@
 import axios from "axios";
 import LocalStorage from "services/local-storage";
 
-const ENV = import.meta.env;
-const BASE_URL =
-  ENV.MODE === "development"
-    ? ENV.VITE_DEVELOPMENT_API_BASE_URL
-    : ENV.VITE_PRODUCTION_API_BASE_URL;
-
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: import.meta.env.VITE_DEVELOPMENT_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -23,16 +17,12 @@ axiosInstance.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 let isRefreshing = false;
 axiosInstance.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   (error) => {
     const {
       response: { status },
