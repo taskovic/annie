@@ -15,8 +15,9 @@ export default function LoginForm() {
     password: "",
     rememberMe: true
   });
-  const { email, password } = formData;
+  const [hasError, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { email, password } = formData;
 
   const [
     login,
@@ -28,7 +29,6 @@ export default function LoginForm() {
       error 
     }
    ] = useLoginMutation();
-  const [hasError, setError] = useState<string | null>(null);
   
    if (isLoading) {
     console.log("Loading... ");
