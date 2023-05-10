@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import InputEmail from "components/forms/InputEmail/InputEmail";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
-import { forgotPassword } from "~/api/auth";
+import { useForgotPasswordMutation } from "api/authSlice";
 
 export default function ForgotPasswordForm() {
   const [formData, setFormData] = useState({
@@ -15,15 +14,31 @@ export default function ForgotPasswordForm() {
   const navigate = useNavigate();
   const { email } = formData;
 
+  const [
+    forgotPassword,
+    { 
+      isLoading, 
+      isSuccess,
+      isError,
+      error 
+    }
+  ] = useForgotPasswordMutation();
+
+  if (isLoading) {
+    console.log("Loading... ");
+   }
+
+   if (isSuccess) {
+    navigate("/email-sended");
+   }
+
+   if (isError) {
+    console.error("LoginError: ", error);
+   }
+
   function handleSubmit() {
-    if (!email) return setError("Email must be provided.");
-    forgotPassword(email)
-      .then(() => {
-        navigate("/email-sended");
-      }).catch((err) => {
-        console.log("forgotpasswordERROR: ", err);
-        return setError("Server error");
-      });
+    if (!email) return setError("Email is required!");
+    forgotPassword({email: email});
   }
 
   function handleInputChange(e: any) {
