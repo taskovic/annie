@@ -1,5 +1,5 @@
 .radio-button-wrapper {
-  margin-left: 24px;
+  margin-left: max(24px, calc(15px + 0.7vw));
   span {
 
     [type="radio"]:checked,
@@ -14,8 +14,7 @@
       padding-left: 40px;
       padding-top: 2px;
       cursor: pointer;
-      line-height: 20px;
-      font-size: 12px;
+      @apply text-12;
       display: inline-block;
       color: #0C273A;
       @apply font-CarmenMedium;
@@ -27,8 +26,8 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 24px;
-      height: 24px;
+      width: max(24px, calc(15px + 0.7vw));
+      height: max(24px, calc(15px + 0.7vw));
       border: 1px solid #ddd;
       border-radius: 100%;
       background: #fff;
@@ -37,8 +36,8 @@
     [type="radio"]:checked+label:after,
     [type="radio"]:not(:checked)+label:after {
       content: "";
-      width: 18px;
-      height: 18px;
+      width: max(18px, calc(10px + 0.5vw));
+      height: max(18px, calc(10px + 0.5vw));
       background: #6ABEB5;
       position: absolute;
       top: 3px;

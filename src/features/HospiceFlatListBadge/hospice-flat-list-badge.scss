@@ -1,20 +1,25 @@
 .annie-badge {
     @apply font-CarmenMedium;
-    height: 44px;
-    width: 88px;
-    margin: 0 auto;
+    height: max(36px, calc(20px + 1.6vw));
+    width: max(67px, calc(20px + 4vw));
     position: relative;
+    margin: auto;
 
     .badge-content {
-        height: 44px;
-        width: 88px;
+        @apply text-12;
+        width: 100%;
+        height: 100%;
         border-radius: 100px;
         display: flex;
         align-items: center;
-        padding: 10px 12px;
-        justify-content: space-between;
-        font-size: 20px;
+        padding: 0.6vw 0.7vw;
+        justify-content: flex-end;
         color: white;
+
+        &>img{
+            width: max(16px, calc(10px + 0.8vw));
+            margin-left: 0.5vw;
+        }
     }
 
     .bg-green {
@@ -26,18 +31,18 @@
     }
 
     .annie-badge-score-wrapper {
-        width: 400px;
+        width: calc(130px + 15vw);
         height: 0px;
         position: absolute;
-        top: -20px;
-        right: -20px;
+        top: calc(-1vw - 1px);
+        right: calc(-1vw - 1px);
 
         .annie-badge-score {
-            width: 400px;
+            width: calc(130px + 15vw);
             background-color: white;
             position: fixed;
             z-index: 999;
-            padding: 19px 19px 40px;
+            padding: 1vw 1vw 2vw;
             border: 1px solid rgba(12, 39, 58, 0.1);
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
             border-radius: 12px;
@@ -47,24 +52,26 @@
                 display: flex;
                 justify-content: space-between;
                 border-bottom: 1px solid rgba(12, 39, 58, 0.1);
-                padding-bottom: 20px;
+                padding-bottom: 0.5vw;
 
                 &>div:nth-child(1) {
+                    flex: 1;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
 
                     &>div:nth-child(2) {
                         @apply text-elephant;
-                        @apply text-md;
+                        @apply text-12;
+                        margin-top: 8px
                     }
                 }
             }
 
             .badge-score-label {
                 @apply text-elephant;
+                @apply text-10;
                 opacity: .5;
-                font-size: 14px;
             }
 
             .badge-score-content {
@@ -73,8 +80,9 @@
                 height: 100%;
 
                 .score-content-item {
-                    margin-top: 20px;
+                    margin-top: 1vw;
                     width: 100%;
+                    @apply text-10;
 
                     &>div:nth-child(1) {
                         display: flex;
@@ -89,7 +97,7 @@
                             height: 6px;
                             background-color: rgba(12, 39, 58, 0.1);
                             border-radius: 3px;
-                            margin-top: 6px;
+                            margin-top: 0.3vw;
 
                             .MuiLinearProgress-barColorPrimary {
                                 background-color: #82A5F9 !important;

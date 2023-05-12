@@ -1,0 +1,17 @@
+.annie-no-hospice{
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+
+    &>img{
+        width: 100%;
+    }
+
+    &>div:nth-child(2){
+        @apply font-CarmenMedium;
+        @apply text-daintree;
+        @apply text-20;
+    }
+}

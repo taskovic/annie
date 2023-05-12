@@ -1,55 +1,55 @@
 .annie-dropzone {
   margin: 0px;
   width: 100%;
-  height: 84px;
+  height: calc(40px + 3vw);
   border-color: #6699ff !important;
   background: #f7f9fd;
   border: 1px dashed #e1e5eb;
   border-radius: 12px;
   display: flex;
   align-items: center;
-  padding: 24px;
+  padding: max(24px, calc(15px + 0.7vw));
   @apply font-CarmenSemiBold;
   color: #00283c;
-  margin: 12px 0px;
+  margin: 0.8vw 0px;
 
   .annie-dropzone-text {
     flex: 1;
 
-    & > div {
+    &>div {
       margin-bottom: 4px;
-      font-size: 12px;
-      line-height: 17px;
+      @apply text-12;
       display: flex;
 
-      & > p {
+      &>p {
         opacity: 0.5;
       }
 
-      & > span {
+      &>span {
         opacity: 1;
         color: #6699ff;
       }
     }
 
-    & > p {
+    &>p {
       opacity: 0.5;
-      font-size: 10px;
-      line-height: 14px;
+      @apply text-10;
     }
   }
 
   .annie-dropzone-icon {
-    width: 40px;
-    height: 40px;
+    width: calc(25px + 1.1vw);
+    height: calc(25px + 1.1vw);
     background: rgba(102, 153, 255, 0.25);
     border-radius: 12px;
-    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 16px;
 
-    & > img {
-      width: 24px;
-      height: 24px;
+    &>img {
+      width: max(24px, calc(15px + 0.7vw));
+      height: max(24px, calc(15px + 0.7vw));
     }
   }
 }

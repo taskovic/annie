@@ -77,7 +77,7 @@ export default function HospiceFlatList({ hospices, handleCheck }: IHospiceFlatL
                 return (
                   <TableRow
                     key={"hoepice-" + index}
-                    className="annie-flat-list-item gray-list-item"
+                    className={`annie-flat-list-item ${index % 2 === 0 ? "white-list-item":"gray-list-item"}`}
                   >
                     <TableCell className="list-item-1">
                       <ReferCheckbox

@@ -1,13 +1,35 @@
 .annie-navbar {
   @apply w-full;
+  height: 100% !important;
 
   .annie-navbar-tabs {
+    height: 100%;
+
+    .css-1ocpf3a-MuiButtonBase-root-MuiTab-root{
+      min-height: none !important;
+      padding: 0;
+    }
+
+    .css-jpln7h-MuiTabs-scroller{
+    }
+    .css-1wf8b0h-MuiTabs-flexContainer{
+      height: 100% !important;
+
+      button{
+        min-height: none !important;
+        height: 100% !important;
+      }
+    }
+
+    .css-1ujnqem-MuiTabs-root{
+      min-height: none;
+    }
     .MuiButtonBase-root {
-      @apply box-border;
+      min-height: none !important;
+      height: 30px !important;
       flex: 1;
-      height: 53px !important;
-      padding: 0px 0px 21px 0px !important;
-      min-height: 53px;
+      max-width: none;
+      padding-bottom: calc(25px + 0.5vw);
     }
 
     .MuiTouchRipple-root {
@@ -19,7 +41,7 @@
     }
 
     .MuiTab-iconWrapper {
-      @apply text-md;
+      @apply text-12;
       @apply bg-malibu;
       width: 32px;
       height: 32px;
@@ -33,10 +55,11 @@
     }
 
     .MuiTab-textColorPrimary {
-      @apply text-md;
+      @apply text-12;
       @apply font-CarmenSemiBold;
       color: rgba(0, 40, 60, 0.5);
       text-transform: capitalize;
+      min-height: none !important;
     }
 
     .MuiTabs-indicator {

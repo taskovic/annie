@@ -1,19 +1,19 @@
 .annie-refer-checkbox-checked {
   transition: all 0.3s;
-  width: 186px;
-  height: 56px;
+  width: max(146px, calc(80px + 5vw));
+  height: max(48px, calc(35px + 1.2vw));
   border-radius: 12px !important;
   border: 1px solid #46c1b5 !important;
-  padding: 15px;
+  padding: 6px;
   @apply bg-green-light #{!important};
   @apply relative;
 
   .annie-checkmark-text {
     @apply absolute;
-    left: 24px;
+    left: 16px;
     @apply font-CarmenMedium;
     @apply text-juniper;
-    font-size: 16px;
+    @apply text-12 #{!important};
     text-transform: capitalize;
   }
 
@@ -23,13 +23,14 @@
     @apply justify-center;
     @apply bg-green-dark;
     @apply absolute;
-    right: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    right: 0.5vw;
+    width: calc(20px + 1.1vw);
+    height: calc(20px + 1.1vw);
+    border-radius: 8px;
     margin-right: 0px;
 
     img {
+      width: max(16px, calc(10px + 0.5vw));
       transition: all 0.3s;
       @apply opacity-100;
     }
@@ -38,8 +39,8 @@
 
 .annie-refer-checkbox-unchecked {
   transition: all 0.3s;
-  width: 186px;
-  height: 56px;
+  width: max(146px, calc(80px + 5vw));
+  height: max(48px, calc(35px + 1.2vw));
   border-radius: 12px !important;
   border: 1px solid transparent !important;
   padding: 15px;
@@ -48,7 +49,8 @@
 
   .annie-checkmark-text {
     @apply absolute;
-    left: 24px;
+    @apply text-12 #{!important};
+    left: 16px;
     @apply font-CarmenMedium;
     color: #00283c;
     font-size: 16px;
@@ -61,10 +63,10 @@
     @apply justify-center;
     @apply bg-white;
     @apply absolute;
-    right: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    right: 0.5vw;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
     margin-right: 0px;
 
     img {

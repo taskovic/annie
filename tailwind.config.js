@@ -44,10 +44,14 @@ export default {
         CarmenUltraLight: ["Carmen-Ultra-Light", "sans"]
       },
       fontSize: {
+        "10": ["max(10px, min(100px, calc(2px + .63vw)))"],
+        "12": ["max(12px, min(100px, calc(4px + .63vw)))"],
+        "16": ["max(16px, min(100px, calc(8px + .63vw)))"],
+        "20": ["max(20px, min(100px, calc(12px + .63vw)))"],
         "sm": ["12px"],
         "md": ["16px"],
         "lg": ["16px"],
-        "20": ["1.25rem"],
+        
       },
       backgroundColor: {
         "link-water": "#F7F9FD",

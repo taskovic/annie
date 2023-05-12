@@ -6,10 +6,11 @@
   display: flex;
   align-items: center;
   background-color: #e9edf5 !important;
-  height: 56px;
+  height: 100%;
   border-radius: 12px !important;
 
   .search-input-base {
+    @apply text-12;
     flex: 1;
     padding-left: 32px;
   }

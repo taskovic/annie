@@ -2,13 +2,22 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
-  padding: 8px;
+  padding: 0.5vw;
   max-width: 100%;
 
   .annie-upload-file-info-icon {
-    padding: 8px;
+    width: calc(25px + 1.1vw);
+    height: calc(25px + 1.1vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 40, 60, 0.1);
     border-radius: 12px;
+
+    &>img{
+      width: max(24px, calc(15px + 0.7vw));
+      height: max(24px, calc(15px + 0.7vw));
+    }
   }
 
   .annie-upload-file-info-content {
@@ -16,8 +25,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 16px;
-    margin-right: 8px;
+    margin-left: 1vw;
+    margin-right: .5vw;
 
     &>div:nth-child(1) {
       max-width: 100%;
@@ -25,10 +34,9 @@
 
     .file-name {
       @apply font-CarmenSemiBold;
-      font-size: 12px;
-      line-height: 17px;
+      @apply text-12;
       color: #00283c;
-      margin-bottom: 2px;
+      margin-bottom: 0.1vw;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -38,10 +46,14 @@
 
     .file-info {
       @apply font-CarmenSemiBold;
-      font-size: 10px;
-      line-height: 14px;
+      @apply text-10;
       opacity: 0.5;
       color: #00283c;
+    }
+
+    img{
+      width: max(24px, calc(15px + 0.7vw));
+      height: max(24px, calc(15px + 0.7vw));
     }
   }
 }

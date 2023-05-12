@@ -1,6 +1,5 @@
 .annie-hospice-flat-list {
-  max-width: 1879px;
-  padding-top: 50px;
+  width: calc(100% - 128px);
   margin: auto auto;
   @apply flex;
   @apply justify-center;
@@ -9,44 +8,46 @@
     box-shadow: none;
     width: 100%;
     overflow-x: auto;
-    border-radius: 16px;
 
     .css-1ex1afd-MuiTableCell-root {
       border: none;
+      padding: 12px;
+      background: transparent;
     }
 
     .css-177gid-MuiTableCell-root {
       border: none;
+      border-radius: 12px;
     }
 
     .annie-flat-list-item {
       max-width: 1879px;
       @apply w-full;
-      height: 88px;
+      height: 72px;
 
       .list-item-2 {
         @apply font-CarmenMedium;
-        @apply text-20;
+        @apply text-12;
       }
 
       .list-item-3 {
         img {
-          width: 32px;
-          height: 32px;
+          width: 36px;
+          height: 36px;
           margin: auto auto;
         }
       }
 
       .list-item-4 {
         @apply font-CarmenMedium;
-        @apply text-20;
+        @apply text-12;
         @apply text-center;
         @apply text-tiber;
       }
 
       .list-item-5 {
         @apply font-CarmenMedium;
-        @apply text-20;
+        @apply text-12;
         @apply text-center;
         @apply text-tiber;
       }
@@ -60,21 +61,21 @@
         .annie-rating {
           width: 139px;
           @apply font-CarmenMedium;
-          @apply text-20;
+          @apply text-12;
           @apply text-tiber;
         }
       }
 
       .list-item-7 {
         @apply font-CarmenMedium;
-        @apply text-20;
+        @apply text-12;
         @apply text-center;
         @apply text-tiber;
       }
 
       .list-item-8 {
         @apply font-CarmenMedium;
-        @apply text-20;
+        @apply text-12;
         @apply text-center;
         @apply text-tiber;
       }
@@ -91,7 +92,7 @@
 
           .MuiBadge-badge {
             @apply font-CarmenMedium;
-            @apply text-20;
+            @apply text-12;
             color: #6699ff;
             top: 18px;
             right: 34px;
@@ -119,7 +120,7 @@
     .list-head-item-6 {
       flex: 2;
       @apply font-CarmenMedium;
-      @apply text-md;
+      @apply text-10;
       @apply text-daintree;
       border: none;
     }
@@ -130,10 +131,9 @@
     .list-head-item-7,
     .list-head-item-8,
     .list-head-item-9 {
-      max-width: 100px;
       @apply text-center;
       @apply font-CarmenMedium;
-      @apply text-md;
+      @apply text-10;
       @apply text-daintree;
       border: none;
     }

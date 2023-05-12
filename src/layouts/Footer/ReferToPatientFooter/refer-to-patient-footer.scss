@@ -2,18 +2,17 @@
     @apply font-CarmenRegular;
     @apply bg-daintree;
     width: calc(100% - 120px);
-    max-width: 1879px;
-    height: 156px;
+    height: calc(100px + 4vw);
     margin: 100px 60px 0px 60px;
     border-radius: 16px;
     position: relative;
-    padding: 0px 32px 0px 334px;
+    padding: 0px 32px 0px calc(200px + 10vw);
+    ;
 
     &>img {
-        width: 284px;
-        height: 239px;
+        width: calc(150px + 10vw);
         position: absolute;
-        top: -64px;
+        top: calc(-40px - 2.2vw);
         left: 18px;
     }
 
@@ -25,50 +24,53 @@
 
         &>div:nth-child(1) {
             height: 100%;
-            max-width: 772px;
+            max-width: 50%;
 
             &>div:nth-child(1) {
+                @apply text-20;
                 color: white;
-                font-size: 20px;
-                line-height: 24px;
                 margin-top: 32px;
                 margin-bottom: 12px;
             }
 
             &>div:nth-child(2) {
-                font-size: 12px;
+                @apply text-12;
                 color: white;
                 opacity: .5;
-                line-height: 16px;
             }
         }
 
         &>div:nth-child(2) {
-            width: 100%;
-            max-width: 297px;
-            height: 56px;
+            width: max(236px, calc(200px + 6vw));
+            height: max(56px, calc(40px + 1.2vw));
 
             .send-referral-button {
                 background: #82A5F9;
                 border-radius: 12px;
-                height: 56px;
+                height: max(56px, calc(40px + 1.2vw));
                 width: 100%;
 
                 &>div {
+                    @apply text-16;
                     height: 100%;
                     display: flex;
-                    padding: 8px 8px 8px 20px;
+                    padding: .5vw .5vw .5vw 1.2vw;
                     justify-content: space-between;
                     align-items: center;
-                    font-size: 16px;
                     color: white;
 
                     .send-referral-button-icon {
-                        width: 40px;
-                        height: 40px;
+                        width: calc(20px + 1.1vw);
+                        height: calc(20px + 1.1vw);
                         background: rgba(255, 255, 255, 0.25);
                         border-radius: 12px;
-                        padding: 8px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &>img{
+                            width: max(16px, calc(10px + 0.5vw));
+                        }
                     }
                 }
             }

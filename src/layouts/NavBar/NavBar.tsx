@@ -31,13 +31,13 @@ export default function NavBar({
               icon={
                 notifications &&
                 notifications.map((e) => e.tab).indexOf(tab) > -1 ? (
-                  <Box>
+                  <div>
                     {
                       notifications[
                         notifications.map((e) => e.tab).indexOf(tab)
                       ].value
                     }
-                  </Box>
+                  </div>
                 ) : (
                   <></>
                 )

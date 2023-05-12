@@ -1,4 +1,4 @@
-import { Paper, InputBase, IconButton, InputBaseProps } from "@mui/material";
+import { InputBase, IconButton, InputBaseProps } from "@mui/material";
 import Loop from "components/icons/Loop/Loop";
 
 interface Props extends InputBaseProps {
@@ -7,7 +7,7 @@ interface Props extends InputBaseProps {
 
 export default function SearchInput({ handleSearch, ...rest }: Props) {
   return (
-    <Paper component="form" className="search-input">
+    <div className="search-input">
       <InputBase className="search-input-base" {...rest} />
       <IconButton
         type="button"
@@ -18,6 +18,6 @@ export default function SearchInput({ handleSearch, ...rest }: Props) {
       >
         <Loop />
       </IconButton>
-    </Paper>
+    </div>
   );
 }

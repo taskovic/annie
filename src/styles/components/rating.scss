@@ -1,5 +1,11 @@
 .annie-rating {
   display: flex;
+  align-items: center;
+
+  img{
+    width: max(16px, calc(10px + 0.5vw));
+    height: max(16px, calc(10px + 0.5vw));
+  }
 
   span {
     margin-right: 15px;

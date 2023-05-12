@@ -22,12 +22,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
 
-        
+
           <Route path="/email-sended" element={<EmailSended />} />
           <Route path="/password-changed" element={<PasswordChanged />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<SetNewPassword />} />
-
           {/**
            *  Protected routes
            */}

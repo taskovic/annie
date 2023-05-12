@@ -1,14 +1,6 @@
 .annie-referal-modal-root {
-
-  width: 95% !important;
-
-  @screen laptop {
-    max-width: 1141px !important;
-  }
-
-  @screen desktop {
-    max-width: 1564px !important;
-  }
+  width: calc(500px + 50vw) !important;
+  background-color: red;
 
   .annie-referal-modal {
     width: 100%;
@@ -19,8 +11,6 @@
     .refer-hospice {
       position: relative;
       width: 20%;
-      min-width: 245px;
-      max-width: 432px;
       box-sizing: border-box;
       background: #00283c;
       border-radius: 16px;
@@ -33,14 +23,13 @@
         padding: 72px 24px;
 
         &>P {
-          font-size: 12px;
-          line-height: 16px;
+          @apply text-12;
           color: rgba(255, 255, 255, 0.25);
           margin-bottom: 24px;
         }
 
         .refer-hospice-list-item {
-          height: 44px;
+          height: calc(20px + 2vw);
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -48,8 +37,7 @@
 
           &>div:nth-child(2) {
             color: rgba(255, 255, 255, 0.25);
-            font-size: 10px;
-            line-height: 12px;
+            @apply text-10;
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
@@ -59,21 +47,19 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              width: 32px;
-              height: 20px;
+              width: max(32px, calc(20px + 0.8vw));
+              height: max(20px, calc(12px + 0.8vw));
               background: rgba(255, 255, 255, 0.25);
               border-radius: 100px;
               color: #FFFFFF;
-              font-size: 10px;
-              line-height: 12px;
+              @apply text-10;
             }
 
           }
 
           &>p {
             color: white;
-            font-size: 12px;
-            line-height: 16px;
+            @apply text-12;
           }
         }
 
@@ -117,8 +103,7 @@
         padding: 0px;
 
         &>p {
-          font-size: 12px;
-          line-height: 16px;
+          @apply text-12;
           margin-bottom: 6px;
         }
       }
@@ -139,14 +124,13 @@
         flex-direction: column;
 
         p {
-          font-size: 12px;
-          line-height: 16px;
+          @apply text-12;
 
           &>span {
             //@apply font-CarmenLight;
             width: 67px;
             height: 20px;
-            font-size: 10px;
+            @apply text-10;
             padding: 4px 8px;
             background: #F9ECEC;
             border-radius: 100px;
@@ -163,7 +147,7 @@
           .send-referral-button {
             background: #46c1b5;
             border-radius: 12px;
-            height: 56px;
+            height: max(56px, calc(40px + 1.2vw));
             width: 100%;
 
             &>div {
@@ -172,15 +156,21 @@
               padding: 8px 8px 8px 20px;
               justify-content: space-between;
               align-items: center;
-              font-size: 16px;
+              @apply text-16;
               color: white;
 
               .send-referral-button-icon {
-                width: 40px;
-                height: 40px;
+                width: calc(20px + 1.1vw);
+                height: calc(20px + 1.1vw);
                 background: rgba(255, 255, 255, 0.25);
                 border-radius: 12px;
-                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &>img {
+                  width: max(16px, calc(10px + 0.5vw));
+                }
               }
             }
           }
@@ -198,8 +188,7 @@
               .question-text {
                 @apply font-CarmenRegular;
                 width: 45%;
-                font-size: 10px;
-                line-height: 12px;
+                @apply text-10;
               }
             }
           }

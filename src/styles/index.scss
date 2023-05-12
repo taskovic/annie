@@ -48,10 +48,10 @@
 }
 
 .app {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
-  margin: auto auto !important;
+  margin: 0 auto !important;
 }
 
 // This is reset style which is obligated to reset all default behaviors of all elements who will be used in future development.
