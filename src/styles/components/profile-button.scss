@@ -1,5 +1,137 @@
-.annie-profile-button {
-  width: 48px !important;
-  height: 48px !important;
-  padding: 0px !important;
+.annie-profile-button-wrapper {
+  height: 100%;
+  @apply font-CarmenRegular;
+  position: relative;
+
+  .annie-profile-button {
+    height: calc(20px + 1.5vw) !important;
+    padding: 0px !important;
+
+    &>img{
+      height: 100%;
+    }
+  }
+
+  .annie-profile-card {
+    min-width: 282px;
+    min-height: 362px;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    padding: 16px;
+    border: 1px solid rgba(12, 39, 58, 0.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+
+    &>div:nth-child(1) {
+      height: 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &>div:nth-child(2) {
+      min-height: 194px;
+      margin: 32px 0px;
+      display: flex;
+      justify-content: space-between;
+
+      &>div:nth-child(1) {
+        height: 32px;
+        width: 32px;
+      }
+
+      &>div:nth-child(2) {
+        width: 200px;
+        margin-left: 16px;
+
+        &>div:nth-child(1) {
+          @apply text-16;
+          max-width: 200px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .annie-profile-card-divider {
+          width: 100%;
+          height: 1px;
+          margin: 16px 0px;
+          border-top: 1px solid rgba(12, 39, 58, 0.1);
+        }
+
+        &>div:nth-child(3),
+        &>div:nth-child(4),
+        &>div:nth-child(5) {
+          display: flex;
+          align-items: center;
+          padding-right: 16px;
+
+          &>p {
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            @apply text-12;
+            margin-left: 10px;
+            color: #0C273A;
+            opacity: 0.5;
+          }
+        }
+
+        &>div:nth-child(4) {
+          margin: 12px 0px;
+        }
+
+        &>div:nth-child(7) {
+          height: 36px;
+          width: 100%;
+          background: #E1F2F0;
+          border-radius: 100px;
+          padding: 10px 12px;
+          display: flex;
+          justify-content: space-between;
+
+          &>p {
+            flex: 1;
+            text-align: center;
+            color: #6ABEB5;
+            @apply text-12;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    &>div:nth-child(3) {
+      height: 48px;
+
+      .button {
+        background: #82A5F9;
+        border-radius: 12px;
+        height: 48px;
+        width: 100%;
+
+        &>div {
+          height: 100%;
+          display: flex;
+          padding: 8px 8px 8px 20px;
+          justify-content: space-between;
+          align-items: center;
+          @apply text-12;
+          color: white;
+
+          .button-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
 }

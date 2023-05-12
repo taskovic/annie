@@ -34,9 +34,13 @@ export default function HospiceFlatListBadge({ value, open, handleOpen, handleCl
                                         Excellent
                                     </div>
                                 </div>
-                                <div className={`badge-content ${bgColor}`}>
-                                    {value.toFixed(1)}
-                                    <CircleXCloseWhiteIcon onClick={handleClose} />
+                                <div>
+                                    <div className="annie-badge">
+                                    <div className={`badge-content ${bgColor}`}>
+                                        {value.toFixed(1)}
+                                        <CircleXCloseWhiteIcon onClick={handleClose} />
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="badge-score-content">

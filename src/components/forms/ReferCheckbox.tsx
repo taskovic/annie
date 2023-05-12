@@ -21,13 +21,14 @@ export default function ReferCheckbox({
   }
 
   const buttonVariant = isSelected ? "checked" : "unchecked";
+  const textContent = isSelected ? "Referred" : "Refer";
 
   return (
     <Button
       className={`annie-refer-checkbox-${buttonVariant}`}
       onClick={handleCheckClick}
     >
-      <Text className="annie-checkmark-text" content="Refered" />
+      <Text className="annie-checkmark-text" content={textContent} />
       <div className="annie-checkmark-box">
         <Checkmark />
       </div>

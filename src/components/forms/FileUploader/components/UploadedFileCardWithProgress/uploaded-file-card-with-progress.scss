@@ -3,11 +3,12 @@
   background-color: white;
   border: 1px solid #e1e5eb;
   border-radius: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 1vw;
+  margin-top: 1vw;
 
   .uploaded-file-card-progress-container {
     display: flex;
-    margin: 0px 17px 12px 64px;
+    margin: 0px 1vw 0.8vw 64px;
     align-items: center;
 
     .uploaded-file-card-progress {

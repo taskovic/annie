@@ -1,16 +1,16 @@
 .annie-filters {
   display: flex;
   align-items: center;
-  margin: 32px 60px;
+  margin: 32px 67px;
 
   .filters-label {
     @apply font-CarmenSemiBold;
-    @apply text-md;
-    margin-right: 60px;
+    @apply text-12;
+    margin-right: 2vw;
   }
 
   .filters-input {
     margin-right: 20px;
-    max-width: 279px;
+    max-width: calc(200px + 9vw);
   }
 }

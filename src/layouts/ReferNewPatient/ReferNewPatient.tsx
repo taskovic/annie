@@ -8,6 +8,8 @@ import ReferNewPatientFilters from "../../features/ReferNewPatientFilters/ReferN
 import Modal from "layouts/Modal/Modal";
 import ReferalModal from "features/ReferalModal/ReferalModal";
 import ReferalSentModal from "~/features/ReferalSentModal/ReferalSentModal";
+import NoData from "~/layouts/NoData/NoData";
+import NoHospice from "~/components/ui/NoHospice/NoHospice";
 
 
 export default function ReferNewPatient() {
@@ -81,13 +83,20 @@ export default function ReferNewPatient() {
   return (
     <>
       <ReferNewPatientFilters />
-      <HospiceFlatList hospices={hospicesArr} handleCheck={handleCheckHospice} />
-      <ReferToPatientFooter data={hospicesArr} setOpenReferalModal={setOpenReferalModal}/>
+      {
+        hospicesArr.length < 0 ?
+          <NoData>
+              <NoHospice />
+          </NoData>
+          :
+          <HospiceFlatList hospices={hospicesArr} handleCheck={handleCheckHospice} />
+      }
+      <ReferToPatientFooter data={hospicesArr} setOpenReferalModal={setOpenReferalModal} />
       <Modal className="annie-referal-modal-root" open={openReferalModal} handleClose={() => { setOpenReferalModal(false) }}>
-        <ReferalModal hospice={hospicesArr} onSubmit={()=>{setOpenReferalSentModal(true);setOpenReferalModal(false)}}/>
+        <ReferalModal hospice={hospicesArr} onSubmit={() => { setOpenReferalSentModal(true); setOpenReferalModal(false) }} />
       </Modal>
       <Modal className="annie-referal-sent-modal-root" open={openReferalSentModal} handleClose={() => { setOpenReferalSentModal(false) }}>
-        <ReferalSentModal handleClose={() => { setOpenReferalSentModal(false) }}/>
+        <ReferalSentModal handleClose={() => { setOpenReferalSentModal(false) }} />
       </Modal>
     </>
   );

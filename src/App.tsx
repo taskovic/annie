@@ -22,18 +22,18 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
 
-        
+
           <Route path="/email-sended" element={<EmailSended />} />
           <Route path="/password-changed" element={<PasswordChanged />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<SetNewPassword />} />
-
+          <Route path="/dashboard" element={<Dashboard />} />
           {/**
            *  Protected routes
            */}
-          <Route path="/dashboard" element={<PrivateRouter />}>
+          {/*<Route path="/dashboard" element={<PrivateRouter />}>
             <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
+          </Route>*/}
 
           {/* <Route path="/reset-password/:userId/:token" element={<PrivateRouter />}>
             <Route path="/reset-password/:userId/:token" element={<SetNewPassword />} />

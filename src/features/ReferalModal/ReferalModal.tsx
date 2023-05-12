@@ -12,6 +12,7 @@ import InputPhone from "~/components/forms/InputPhone/InputPhone";
 import InputEmail from "~/components/forms/InputModalEmail/InputEmail";
 import InputTextarea from "~/components/forms/InputTextarea/InputTextarea";
 import Rating from "~/components/ui/Rating";
+import InputText from "~/components/forms/InputText/InputText";
 
 interface Props {
   hospice: any;
@@ -94,9 +95,10 @@ export default function ReferalModal({ hospice, onSubmit }: Props) {
               onChange={handleInputChange}
               dob={dob}
               placeholder="DOB" />
-            <InputSSN
+            <InputText
               onChange={handleInputChange}
-              ssn={ssn}
+              value={ssn}
+              name="ssn"
               placeholder="SSN" />
             <InputPhone
               onChange={handleInputChange}

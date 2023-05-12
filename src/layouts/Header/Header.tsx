@@ -11,39 +11,40 @@ import { TContext } from "types";
 
 export default function Header() {
   const [notification, setNotification] = useState([
-    { tab: navbarTabs[3], value: 3 },
   ]);
 
   const { activeTabName, setActiveTabName } = useContext(Context) as TContext;
 
   return (
-    <Box className="annie-header">
-      <Logo />
-      <Box className="search-section">
-        <SearchInput placeholder="Search" />
-      </Box>
-      <Box className="notification-section">
-        <Notification
-          onClick={() => {
-            alert("Notification");
-          }}
-        />
-      </Box>
-      <Box className="profile-section">
-        <Profile
-          onClick={() => {
-            alert("Profile");
-          }}
-        />
-      </Box>
-      <Box className="navbar-section">
+    <div className="annie-header">
+      <div className="annie-header-top-menu">
+        <div className="logo-section">
+          <Logo />
+        </div>
+        <div className="search-section">
+          <SearchInput placeholder="Search" />
+        </div>
+        <div className="annie-header-right-menu">
+          <div className="notification-section">
+            <Notification
+              onClick={() => {
+                alert("Notification");
+              }}
+            />
+          </div>
+          <div className="profile-section">
+            <Profile />
+          </div>
+        </div>
+      </div>
+      <div className="navbar-section">
         <NavBar
           value={activeTabName}
           tabs={navbarTabs}
           notifications={notification}
           handleChange={setActiveTabName}
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }

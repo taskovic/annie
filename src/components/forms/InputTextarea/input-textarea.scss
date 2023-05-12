@@ -21,8 +21,7 @@
         border: none;
         outline: none;
         width: 100%;
-        font-size: 12px;
-        line-height: 16px;
+        @apply text-12;
         padding: 8px 12px;
         background-color: transparent;
         height: 100%;
@@ -30,8 +29,7 @@
 
         &::placeholder {
             @apply font-CarmenMedium;
-            font-size: 12px;
-            line-height: 16px;
+            @apply text-12;
             color: #c2c9ce;
         }
     }
