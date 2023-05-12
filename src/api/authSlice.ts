@@ -26,6 +26,12 @@ export const authSlice = createApi({
         body: user
       })
     }),
+    logout: builder.mutation({
+      query: () => ({
+        url: "/auth/logout",
+        method: "POST"
+      })
+    }),
     forgotPassword: builder.mutation({
       query: (email) => ({
         url: "/users/reset-password",
@@ -34,10 +40,10 @@ export const authSlice = createApi({
       })
     }),
     updatePassword: builder.mutation({
-      query: (userId, ...data) => ({
-        url: `/users/${userId}/reset-password`,
+      query: (data) => ({
+        url: `/users/${data.userId}/reset-password`,
         method: "PATCH",
-        body: data
+        body: data.body
       })
     })
   })
@@ -45,6 +51,7 @@ export const authSlice = createApi({
 
 export const {
   useLoginMutation,
+  useLogoutMutation,
   useForgotPasswordMutation,
   useUpdatePasswordMutation
 } = authSlice;

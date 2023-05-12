@@ -21,7 +21,7 @@ export default function InputEmail({
         className={`input-email ${hasError && "input-error"}`}
         type="text"
         name="email"
-        onChange={(e) => onChange(e)}
+        onChange={(e) => onChange(e.target.name, e.target.value)}
         value={email}
         placeholder={placeholder}
       />      

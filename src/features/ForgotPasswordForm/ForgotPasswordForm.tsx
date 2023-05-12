@@ -4,15 +4,20 @@ import { useNavigate } from "react-router-dom";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
 import { useForgotPasswordMutation } from "api/authSlice";
+import { useFormDataHandler } from "hooks/useFormDataHandler";
+import { TForgotPassword } from "~/types";
 
 export default function ForgotPasswordForm() {
-  const [formData, setFormData] = useState({
-    email: "",
-  });
-  
   const [hasError, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { email } = formData;
+
+  const { 
+    formData, 
+    handleInputChange 
+  } = useFormDataHandler({
+    email: ""
+  });
+  const { email } = formData as TForgotPassword;
 
   const [
     forgotPassword,
@@ -39,11 +44,6 @@ export default function ForgotPasswordForm() {
   function handleSubmit() {
     if (!email) return setError("Email is required!");
     forgotPassword({email: email});
-  }
-
-  function handleInputChange(e: any) {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
   }
 
   return (
