@@ -3,8 +3,7 @@ import ArrowRightIcon from "assets/icons/arrow-right.svg";
 import { Form, Formik } from "formik";
 import { array, object, string } from "yup";
 import { FileUploader } from "../../components/forms/FileUploader/FileUploader";
-import { useState, useEffect } from "react";
-import InputRadio from "~/components/forms/InputRadio/InputRadio";
+import { useState } from "react";
 import RadioGroup from "~/components/forms/RadioGroup/RadioGroup";
 import InputDOB from "~/components/forms/InputDOB/InputDOB";
 import InputSSN from "~/components/forms/InputSSN/InputSsn";
@@ -20,13 +19,8 @@ interface Props {
 }
 
 export default function ReferalModal({ hospice, onSubmit }: Props) {
-
-  const selectedHospices = hospice.filter((x: any) => x.checked === true)
-
-  console.log(selectedHospices)
-
-  //console.log(hospice)
-  const question1Options = ["Yes", "No"]
+  const selectedHospices = hospice.filter((x: any) => x.checked === true);
+  const question1Options = ["Yes", "No"];
 
   const [formData, setFormData] = useState({
     patientID: "",
@@ -51,39 +45,32 @@ export default function ReferalModal({ hospice, onSubmit }: Props) {
     return new Promise((res) => setTimeout(res, 1000));
   }
 
-  const [selectedValue, setSelectedValue] = useState<String>(question1Options[0]);
-
-  function drinkSelectionHandler(event: React.ChangeEvent<HTMLInputElement>) {
-    setSelectedValue(event.target.value);
-  }
+  const hospices = selectedHospices.map((hospice: any, index: number) => {//TODO: This needs to be hospice card placed inside referalModal/components
+    return (
+      <div key={hospice.id}>
+        <div className="refer-hospice-list-item">
+          <p>{hospice.name}</p>
+          <div>
+            <div>
+              {hospice.value7}
+            </div>
+            <Rating rating={hospice.value4} color="white" />
+          </div>
+        </div>
+        {
+          index !== selectedHospices.length - 1 &&
+          <div className="refer-hospice-list-divider"></div>
+        }
+      </div>
+    )
+  })
 
   return (
     <div className="annie-referal-modal">
       <div className="refer-hospice">
         <div className="refer-hospice-list-root">
           <p>Refer Hospice</p>
-          {
-            selectedHospices.map((hospice: any, index: number) => {
-              return (
-                <div key={hospice.id}>
-                  <div className="refer-hospice-list-item">
-                    <p>{hospice.name}</p>
-                    <div>
-                      <div>
-                        {hospice.value7}
-                      </div>
-                      <Rating rating={hospice.value4} color="white" />
-                    </div>
-                  </div>
-                  {
-                    index !== selectedHospices.length - 1 &&
-                    <div className="refer-hospice-list-divider"></div>
-                  }
-                </div>
-              )
-            })
-          }
-
+          { hospices }
         </div>
         <img src={ReferHospiceIcon} />
       </div>
@@ -182,7 +169,6 @@ export default function ReferalModal({ hospice, onSubmit }: Props) {
                 </Form>
               )}
             </Formik>
-
           </div>
         </div>
       </div>

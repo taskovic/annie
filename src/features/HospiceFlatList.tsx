@@ -40,8 +40,6 @@ interface IHospiceFlatList {
 }
 
 export default function HospiceFlatList({ hospices, handleCheck }: IHospiceFlatList) {
-  console.log("HOSPICE_FLAT_LIST: ", hospices);
-
   const [selectedScoreIndex, setSelectedScoreIndex] = useState(-1)
 
   const gray = true;

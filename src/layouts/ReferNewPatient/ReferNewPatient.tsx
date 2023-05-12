@@ -1,20 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import HospiceFlatList from "features/HospiceFlatList";
-import { Context } from "contexts";
-import { TContext } from "types";
 import ReferToPatientFooter from "~/layouts/Footer/ReferToPatientFooter/ReferToPatientFooter";
 import ReferNewPatientFilters from "../../features/ReferNewPatientFilters/ReferNewPatientFilters";
-
 import Modal from "layouts/Modal/Modal";
 import ReferalModal from "features/ReferalModal/ReferalModal";
 import ReferalSentModal from "~/features/ReferalSentModal/ReferalSentModal";
 import NoData from "~/layouts/NoData/NoData";
 import NoHospice from "~/components/ui/NoHospice/NoHospice";
 
-
 export default function ReferNewPatient() {
-  const { filteredHospices, isFetching } = useContext(Context) as TContext;
-
   const [hospicesArr, setHospiceArr] = useState([
     {
       id: 1,

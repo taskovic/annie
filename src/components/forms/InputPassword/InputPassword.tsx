@@ -20,7 +20,6 @@ export default function InputPassword({
 }: IInputPassword) {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   function handleShowPassword() {
-    console.log("desava se klik");
     setPasswordVisibility(!isPasswordVisible);
   }
 
@@ -31,7 +30,7 @@ export default function InputPassword({
         className={`input-email ${hasError && "input-error"}`}
         type={isPasswordVisible ? "text" : "password"}
         name={name}
-        onChange={(e) => onChange(e)}
+        onChange={(e) => onChange(e.target.name, e.target.value)}
         value={password}
         placeholder={placeholder}
       />

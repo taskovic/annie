@@ -24,7 +24,7 @@ export interface UploadableFile {
   url?: string;
 }
 
-interface Props{
+interface Props {
   name: string;
   required: boolean;
   requiredError?: boolean;
@@ -32,9 +32,7 @@ interface Props{
 
 export function FileUploader({ name, required, requiredError }: Props) {
   const [_, __, helpers] = useField(name);
-
   const [files, setFiles] = useState<UploadableFile[]>([]);
-
   const [errors, setErrors] = useState<string[]>([]);
 
   /*const onDrop = useCallback(
@@ -49,6 +47,8 @@ export function FileUploader({ name, required, requiredError }: Props) {
     },
     []
   );*/
+
+  console.log("Files: ", files);
 
   const onDrop = useCallback(
     (accFiles: File[], rejFiles: FileRejection[], event: DropEvent) => {
@@ -176,9 +176,6 @@ export function FileUploader({ name, required, requiredError }: Props) {
             ))}
           </>
       }
-
-
-
     </>
   );
 }

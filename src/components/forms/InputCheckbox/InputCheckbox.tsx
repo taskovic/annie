@@ -11,7 +11,7 @@ export default function InputCheckbox({
   onChange,
   name,
   placeholder,
-  checked
+  checked=true
 }: IInputCheckbox) {
   return (
     <span>

@@ -1,41 +1,12 @@
-/**
- * Screen will be called from router
- * Inside the screen will be complete business logic alongs with screen state management
- * Screen style will be just grid styling, the basic screen style will be done in components
- */
 import Header from "../layouts/Header/Header";
 import { useState, useEffect } from "react";
 import { Context } from "contexts";
 import { navbarTabs } from "configs";
 import ReferNewPatient from "layouts/ReferNewPatient/ReferNewPatient";
-import { getHospices } from "api/dashboard";
-import Modal from "layouts/Modal/Modal";
-import ReferalModal from "features/ReferalModal/ReferalModal";
 
 export default function Dashboard() {
   const [activeTabName, setActiveTabName] = useState(navbarTabs[2]);
-  const [hospices, setHospices] = useState([]);
-  const [filteredHospices, setFilteredHospices] = useState([]);
-  const [filters, setFilters] = useState(null);
-  const [isFetching, setFetchingStatus] = useState(true);
   const [openReferalModal, setOpenReferalModal] = useState(false);
-
-  useEffect(() => {
-    getHospices()
-      .then((hospice) => {
-        const { data } = hospice;
-        setHospices(data);
-        setFilteredHospices(data);
-        setFetchingStatus(!isFetching);
-      })
-      .catch((err) => {
-        console.error(err);
-        /**
-         * If there is some kind of err push notification and loading screen stays for a while
-         */
-        //setFetchingStatus(!isFetching);
-      });
-  }, [filters]);
 
   function getComponent(name: string) {
     if (!name) return <h1>No View</h1>; // this can be loader
@@ -59,8 +30,6 @@ export default function Dashboard() {
   const ProviderRegistry = {
     activeTabName,
     setActiveTabName,
-    filteredHospices,
-    isFetching,
     openReferalModal,
     setOpenReferalModal
   };
