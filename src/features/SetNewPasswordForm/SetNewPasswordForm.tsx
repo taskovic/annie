@@ -6,17 +6,24 @@ import CTAButton from "components/ui/CTAButton/CTAButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
 import PasswordStrength from "components/forms/PasswordStrength/PasswordStrength";
 import passwordStrengthChecker from "utils/password-strength-checker";
-import { TSetNewPasswordStrength } from "~/types";
-import { updatePassword } from "api/auth";
-
+import { TSetNewPasswordStrength, TSetNewPassword } from "types";
+import { useFormDataHandler } from "hooks/useFormDataHandler";
+import { useUpdatePasswordMutation } from "api/authSlice";
 
 export default function SetNewPasswordForm() {
   const [searchParams] = useSearchParams();
   const [hasError, setError] = useState<string | null>("");
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+
+  const { 
+    formData, 
+    handleInputChange 
+  } = useFormDataHandler({
     password: "",
     rePassword: ""
   });
+  const { password, rePassword } = formData as TSetNewPassword;
+
   const [strength, setStrength] = useState<TSetNewPasswordStrength>({
     minChar: "idle",
     containNumber: "idle",
@@ -25,8 +32,28 @@ export default function SetNewPasswordForm() {
     lowercaseChar: "idle"
   });
 
-  const navigate = useNavigate();
-  const { password, rePassword } = formData;
+  const [
+    updatePassword,
+    { 
+      isLoading, 
+      isSuccess,
+      isError,
+      error 
+    }
+  ] = useUpdatePasswordMutation();
+
+  if (isLoading) {
+    console.log("Loading... ");
+   }
+
+   if (isSuccess) {
+    LocalStorage.clear();
+    navigate("/password-changed");
+   }
+
+   if (isError) {
+    console.error("LoginError: ", error);
+   }
 
   const checkErrors = (): string | null => {
     const userId = searchParams.get("userId");
@@ -62,33 +89,27 @@ export default function SetNewPasswordForm() {
   }
 
   const handleSubmit = async () => {
-    const userId = searchParams.get("userId");
-    const token = searchParams.get("token");
-
+    const userId = searchParams.get("userId") as string;
+    const token = searchParams.get("token") as string;
     const error = checkErrors();
 
     if (error) {
       setError(error);
       return;
     }
-
-    try {
-      await updatePassword(userId as string, {
-        token: token as string,
+    updatePassword({
+      userId: userId,
+      body: {
+        token: token,
         password: password
-      });
-      LocalStorage.clear();
-      navigate("/password-changed");
-    } catch(err) {
-      setError("Something is wrong. Server error");
-    }
+      }
+    });
   };
 
-  const handleInputChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handlePasswordChange = (key: string, value: string) => {
+    handleInputChange(key, value);
     setError("");
-    if (name === "rePassword") return;
+    if (key === "rePassword") return;
     const strength = passwordStrengthChecker(value);
     setStrength(strength);
   };
@@ -98,14 +119,14 @@ export default function SetNewPasswordForm() {
       <InputPassword
         password={password}
         hasError={!!hasError}
-        onChange={handleInputChange}
+        onChange={handlePasswordChange}
         placeholder="New Password"
       />
       <PasswordStrength strength={strength} />
       <InputPassword
         password={rePassword}
         hasError={!!hasError}
-        onChange={handleInputChange}
+        onChange={handlePasswordChange}
         placeholder="Repeat new password"
         name="rePassword" 
       />

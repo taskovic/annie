@@ -14,7 +14,7 @@ export function UploadedFileCardWithProgress({
   onUpload,
 }: UploadedFileCardWithProgressProps) {
   const [progress, setProgress] = useState(0);
-
+  
   useEffect(() => {
     async function upload() {
       const url = await uploadFile(file, setProgress);

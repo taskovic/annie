@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { authSlice } from "api/authSlice";
+import { Provider } from "react-redux";
+import { store } from "./api";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ApiProvider api={authSlice}>
+    <Provider store={store}>
       <App />
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>
 );

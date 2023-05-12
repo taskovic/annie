@@ -9,13 +9,23 @@ export type TContext = {
 };
 
 export type TLogin = {
-  email: string | null;
-  password: string | null;
+  email: string;
+  password: string;
+  rememberMe: boolean
 };
 
 export type TLogout = {
   token: string;
 };
+
+export type TForgotPassword = {
+  email: string
+}
+
+export type TSetNewPassword = {
+  password: string,
+  rePassword: string
+}
 
 export type TSetNewPasswordStrength = {
   minChar: string,

@@ -1,23 +1,29 @@
-import InputEmail from "components/forms/InputEmail/InputEmail";
 import { useState } from "react";
-import LocalStorage from "services/local-storage";
 import { useNavigate } from "react-router-dom";
+import { useLoginMutation } from "api/authSlice";
+import { useFormDataHandler } from "~/hooks/useFormDataHandler";
+import InputEmail from "components/forms/InputEmail/InputEmail";
+import LocalStorage from "services/local-storage";
 import InputPassword from "components/forms/InputPassword/InputPassword";
 import InputCheckbox from "components/forms/InputCheckbox/InputCheckbox";
 import CTAButton from "components/ui/CTAButton/CTAButton";
 import ForgotPasswordButton from "components/ui/ForgotPasswordButton/ForgotPasswordButton";
 import ErrorMessage from "components/ui/ErrorMessage/ErrorMessage";
-import { useLoginMutation } from "api/authSlice";
+import { TLogin } from "types";
 
 export default function LoginForm() {
-  const [formData, setFormData] = useState({
+  const [hasError, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const { 
+    formData, 
+    handleInputChange 
+  } = useFormDataHandler({
     email: "",
     password: "",
     rememberMe: true
   });
-  const [hasError, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
-  const { email, password } = formData;
+  const { email, password, rememberMe } = formData as TLogin;
 
   const [
     login,
@@ -48,15 +54,6 @@ export default function LoginForm() {
     login(formData);
   }
 
-  function handleInputChange(e: any) {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  }
-
-  function handleCheckboxChange(name: string, value: boolean) {
-    setFormData({ ...formData, [name]: value });
-  }
-
   return (
     <>
       <InputEmail 
@@ -76,10 +73,10 @@ export default function LoginForm() {
       }
       <div className="remember-me">
         <InputCheckbox 
-          onChange={handleCheckboxChange} 
+          onChange={handleInputChange} 
           name="remember"
           placeholder="Remember me"
-          checked={formData.rememberMe} />
+          checked={rememberMe} />
         <ForgotPasswordButton path="/forgot-password" />
       </div>
       <CTAButton
